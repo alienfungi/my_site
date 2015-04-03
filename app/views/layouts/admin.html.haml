@@ -1,0 +1,25 @@
+!!! 5
+%html
+  %head
+    %title Admin
+    = stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'admin', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %nav.navbar.navbar-inverse
+      .container
+        .navbar-header
+          %button.navbar-toggle.collapsed{ aria: { controls: 'navbar', expanded: 'false' }, data: { target: '#navbar', toggle: 'collapse' }, type: 'button' }
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to '<3', '#', class: 'navbar-brand'
+        #navbar.collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li= link_to 'Home', '#', class: 'active'
+            %li= link_to 'Nowhere', '#'
+    .container
+      %div
+        %h1 Admin
+        = yield
