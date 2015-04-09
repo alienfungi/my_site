@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   root to: 'static_pages#home'
 
+  scope :browser do
+    get '/ie8' => 'browser_exception#ie8'
+    get '/not_modern' => 'browser_exception#not_modern'
+  end
+
   scope :admin do
     get '/' => 'admin#home'
   end
