@@ -5,6 +5,8 @@ Rails.configuration.middleware.use Browser::Middleware do
       'ie8'
     when !browser.modern?
       'not_modern'
+    else
+      nil
     end
-  redirect_to "/browser/#{ destination }"
+  redirect_to "/browser/#{ destination }" if destination
 end
