@@ -1,0 +1,9 @@
+= f.input :title
+= f.input :company
+= f.input :company_url
+= f.input :company_description
+= f.input :start_date, default: Date.today
+= f.input :end_date, include_blank: true
+= f.input :details, as: :array
+= f.submit 'Save', class: 'btn btn-primary'
+= link_to 'Cancel', occupations_path, class: 'btn btn-default'

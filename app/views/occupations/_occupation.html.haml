@@ -1,0 +1,8 @@
+%tr
+  %td= occupation.title
+  %td= occupation.company
+  %td.right
+    = link_to edit_occupation_path(occupation), class: 'btn btn-primary' do
+      %span.glyphicon.glyphicon-edit{ aria: { hidden: true } }
+    = link_to occupation_path(occupation), method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this occupation?' } do
+      %span.glyphicon.glyphicon-remove{ aria: { hidden: true } }

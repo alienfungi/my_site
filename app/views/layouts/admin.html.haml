@@ -1,7 +1,9 @@
 !!! 5
 %html
   %head
-    %title Admin
+    %title
+      Admin
+      = "| #{ yield :title }" if content_for? :title
     = stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'admin', 'data-turbolinks-track' => true
     = csrf_meta_tags
@@ -20,6 +22,9 @@
             %li= link_to 'Home', '#', class: 'active'
             %li= link_to 'Nowhere', '#'
     .container
-      %div
-        %h1 Admin
-        = yield
+      - if content_for? :title
+        %h1= yield :title
+
+      = render 'layouts/flash_messages'
+
+      = yield

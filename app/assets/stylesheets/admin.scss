@@ -12,5 +12,10 @@
  *
  *= require_tree ./admin
  *= require_self
- *= require bootstrap_and_overrides
  */
+
+@import "bootstrap_and_overrides";
+
+.right {
+  text-align: right;
+}

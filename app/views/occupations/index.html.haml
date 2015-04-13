@@ -1,0 +1,13 @@
+- content_for :title do
+  Occupations
+
+= link_to new_occupation_path, class: 'btn btn-primary' do
+  %span.glyphicon.glyphicon-plus{ aria: { hidden: true } }
+  Add
+%table.table
+  %thead
+    %tr
+      %th Title
+      %th{ colspan: 2 } Company
+  %tbody
+    = render @occupations

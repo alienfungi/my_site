@@ -17,9 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 # Needed for Bootstrap
-gem 'therubyracer'
-gem 'less-rails'
-gem 'twitter-bootstrap-rails'
+gem 'bootstrap-sass', '~> 3.3.4'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -28,6 +26,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # Backend browser detection
 gem 'browser'
+# Form DSL
+gem 'simple_form'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -35,12 +35,19 @@ group :doc do
 end
 
 group :development, :test do
-  gem 'pry'
+  # Fixtures replacement for generating data
+  gem 'factory_girl_rails', '~> 4.0'
+  # Generate lorem ipsum
+  gem 'forgery', '0.6.0'
+  # Rails console replacement
+  gem 'pry-rails'
 end
 
 group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  # Adds schema info to models with annotate command
+  gem 'annotate'
 end
 
 group :production do

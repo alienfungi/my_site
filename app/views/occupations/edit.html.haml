@@ -1,0 +1,5 @@
+- content_for :title do
+  Edit Occupation
+
+= simple_form_for @occupation do |f|
+  = render partial: 'form', locals: { f: f }
