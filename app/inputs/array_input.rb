@@ -3,7 +3,7 @@ class ArrayInput < SimpleForm::Inputs::StringInput
     input_html_options[:type] ||= input_type
     object.public_send(attribute_name).map.with_index do |value, index|
       array_input_field(value, index)
-    end.push(add_additional_field_button).join.html_safe
+    end.push(array_input_field).push(add_additional_field_button).join.html_safe
   end
 
   def input_type
