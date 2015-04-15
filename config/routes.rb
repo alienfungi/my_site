@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
 
   scope :admin do
-    get '/' => 'admin#home'
+    get '/' => 'admin#home', as: 'admin'
     resources :occupations
   end
   # The priority is based upon order of creation: first created -> highest priority.

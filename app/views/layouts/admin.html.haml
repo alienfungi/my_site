@@ -16,11 +16,13 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          = link_to '<3', '#', class: 'navbar-brand'
+          = link_to '<3', root_path, class: 'navbar-brand'
         #navbar.collapse.navbar-collapse
           %ul.nav.navbar-nav
-            %li= link_to 'Home', '#', class: 'active'
-            %li= link_to 'Nowhere', '#'
+            %li{ class: ('active' if params['action'] == 'home') }
+              = link_to 'Admin', admin_path
+            %li{ class: ('active' if params['controller'] == 'occupations') }
+              = link_to 'Occupations', occupations_path
     .container
       - if content_for? :title
         %h1= yield :title
