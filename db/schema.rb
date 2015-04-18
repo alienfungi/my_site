@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150412161648) do
+ActiveRecord::Schema.define(version: 20150418194308) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "educations", force: true do |t|
+    t.string   "school",         null: false
+    t.string   "city"
+    t.string   "state"
+    t.string   "field_of_study"
+    t.string   "degree"
+    t.date     "start_date",     null: false
+    t.date     "end_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "occupations", force: true do |t|
     t.string   "company",                          null: false

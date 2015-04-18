@@ -1,0 +1,13 @@
+- content_for :title do
+  Education
+
+= link_to new_education_path, class: 'btn btn-primary' do
+  %span.glyphicon.glyphicon-plus{ aria: { hidden: true } }
+  Add
+%table.table
+  %thead
+    %tr
+      %th School
+      %th{ colspan: 2 } Field of Study
+  %tbody
+    = render @educations

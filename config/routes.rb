@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   scope :admin do
     get '/' => 'admin#home', as: 'admin'
+    resources :educations
     resources :occupations
   end
   # The priority is based upon order of creation: first created -> highest priority.

@@ -21,6 +21,8 @@
           %ul.nav.navbar-nav
             %li{ class: ('active' if params['action'] == 'home') }
               = link_to 'Admin', admin_path
+            %li{ class: ('active' if params['controller'] == 'education') }
+              = link_to 'Education', educations_path
             %li{ class: ('active' if params['controller'] == 'occupations') }
               = link_to 'Occupations', occupations_path
     .container

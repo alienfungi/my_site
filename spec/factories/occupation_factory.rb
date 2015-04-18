@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: occupations
+#
+#  id                  :integer          not null, primary key
+#  company             :string(255)      not null
+#  company_url         :string(255)
+#  company_description :text
+#  title               :string(255)      not null
+#  start_date          :date             not null
+#  end_date            :date
+#  details             :text             default([]), is an Array
+#  created_at          :datetime
+#  updated_at          :datetime
+#
+
 FactoryGirl.define do
   factory :occupation do
     company { Forgery('name').company_name }

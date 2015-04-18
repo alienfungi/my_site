@@ -1,0 +1,8 @@
+%tr
+  %td= education.school
+  %td= education.field_of_study
+  %td.right
+    = link_to edit_education_path(education), class: 'btn btn-primary' do
+      %span.glyphicon.glyphicon-edit{ aria: { hidden: true } }
+    = link_to education_path(education), method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this education?' } do
+      %span.glyphicon.glyphicon-remove{ aria: { hidden: true } }
