@@ -1,6 +1,7 @@
 class EducationsController < AdminController
   before_action :set_education, only: [:destroy, :edit, :show, :update]
   before_action :set_educations, only: [:index]
+  before_action :set_tags, only: [:edit, :new]
 
   def create
     @education = Education.new(education_params)
@@ -9,6 +10,7 @@ class EducationsController < AdminController
       redirect_to educations_path
     else
       flash[:error] = "Failed to create education"
+      set_tags
       render 'new'
     end
   end
@@ -41,6 +43,7 @@ class EducationsController < AdminController
       redirect_to educations_path
     else
       flash[:error] = "Failed to update \"#{ @education.school }\""
+      set_tags
       render 'edit'
     end
   end
@@ -49,7 +52,8 @@ class EducationsController < AdminController
 
   def education_params
     params.require(:education).permit(
-      :city, :degree, :end_date, :field_of_study, :school, :start_date, :state
+      :city, :degree, :end_date, :field_of_study, :school, :start_date, :state,
+      tag_ids: []
     )
   end
 
@@ -59,5 +63,9 @@ class EducationsController < AdminController
 
   def set_educations
     @educations = Education.by_date.all
+  end
+
+  def set_tags
+    @tags = Tag.alphabetical
   end
 end

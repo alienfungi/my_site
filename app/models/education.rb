@@ -15,6 +15,9 @@
 #
 
 class Education < ActiveRecord::Base
+  has_many :taggings, as: :taggable
+  has_many :tags, through: :taggings
+
   validates_presence_of :school, :start_date
 
   scope :by_date, ->{ order('start_date DESC') }

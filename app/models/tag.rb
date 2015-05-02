@@ -11,6 +11,7 @@
 class Tag < ActiveRecord::Base
   has_many :taggings, dependent: :destroy
   has_many :occupations, through: :taggings, source: :taggable, source_type: 'Occupation'
+  has_many :educations, through: :taggings, source: :taggable, source_type: 'Education'
 
   normalize_attribute :name, with: :squish
 
