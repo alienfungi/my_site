@@ -18,4 +18,12 @@ class Education < ActiveRecord::Base
   validates_presence_of :school, :start_date
 
   scope :by_date, ->{ order('start_date DESC') }
+
+  def max_year
+    Date.today.year
+  end
+
+  def min_year
+    BIRTHDAY.year
+  end
 end

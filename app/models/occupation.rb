@@ -24,6 +24,14 @@ class Occupation < ActiveRecord::Base
 
   scope :by_date, ->{ order('start_date DESC') }
 
+  def max_year
+    Date.today.year
+  end
+
+  def min_year
+    BIRTHDAY.year
+  end
+
   private
 
   def prepare_details
