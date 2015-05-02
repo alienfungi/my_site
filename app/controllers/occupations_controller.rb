@@ -10,7 +10,8 @@ class OccupationsController < AdminController
       redirect_to occupations_path
     else
       flash[:error] = "Failed to create occupation"
-      redirect_to :back
+      set_tags
+      render 'new'
     end
   end
 
@@ -39,10 +40,12 @@ class OccupationsController < AdminController
   def update
     if @occupation.update_attributes(occupation_params)
       flash[:success] = "Successfully updated \"#{ @occupation.title }\""
+      redirect_to occupations_path
     else
       flash[:error] = "Failed to update \"#{ @occupation.title }\""
+      set_tags
+      render 'edit'
     end
-    redirect_to occupations_path
   end
 
   private
@@ -64,6 +67,6 @@ class OccupationsController < AdminController
   end
 
   def set_tags
-    @tags = Tag.all
+    @tags = Tag.alphabetical
   end
 end
