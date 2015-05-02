@@ -9,7 +9,7 @@ class EducationsController < AdminController
       redirect_to educations_path
     else
       flash[:error] = "Failed to create education"
-      redirect_to :back
+      render 'new'
     end
   end
 
