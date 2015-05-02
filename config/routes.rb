@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   scope :admin do
     get '/' => 'admin#home', as: 'admin'
+    resources :certifications
     resources :educations
     resources :occupations
     resources :tags

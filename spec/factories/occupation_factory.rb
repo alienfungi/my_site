@@ -12,6 +12,8 @@
 #  details             :text             default([]), is an Array
 #  created_at          :datetime
 #  updated_at          :datetime
+#  city                :string(255)
+#  state               :string(255)
 #
 
 FactoryGirl.define do
