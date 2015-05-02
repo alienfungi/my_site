@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get '/' => 'admin#home', as: 'admin'
     resources :educations
     resources :occupations
+    resources :tags
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

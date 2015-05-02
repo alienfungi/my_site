@@ -1,0 +1,11 @@
+- content_for :title do
+  Tags
+= link_to new_tag_path, class: 'btn btn-primary' do
+  %span.glyphicon.glyphicon-plus{ aria: { hidden: true } }
+  Add
+%table.table
+  %thead
+    %tr
+      %th{ colspan: 2 } Tag
+  %tbody
+    = render @tags

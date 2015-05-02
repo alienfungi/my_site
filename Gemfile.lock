@@ -31,6 +31,7 @@ GEM
       activerecord (>= 3.2, <= 4.3)
       rake (~> 10.4)
     arel (5.0.1.20140414130214)
+    attribute_normalizer (1.2.0)
     autoprefixer-rails (5.1.8.1)
       execjs
       json
@@ -156,6 +157,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  attribute_normalizer
   bootstrap-sass (~> 3.3.4)
   browser
   coffee-rails (~> 4.0.0)

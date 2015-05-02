@@ -25,6 +25,8 @@
               = link_to 'Education', educations_path
             %li{ class: ('active' if params['controller'] == 'occupations') }
               = link_to 'Occupations', occupations_path
+            %li{ class: ('active' if params['controller'] == 'tags') }
+              = link_to 'Tags', tags_path
     .container
       - if content_for? :title
         %h1= yield :title

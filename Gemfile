@@ -28,6 +28,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'browser'
 # Form DSL
 gem 'simple_form'
+# Normalize model attributes
+gem 'attribute_normalizer'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

@@ -1,6 +1,7 @@
 class OccupationsController < AdminController
   before_action :set_occupation, only: [:destroy, :edit, :show, :update]
   before_action :set_occupations, only: [:index]
+  before_action :set_tags, only: [:edit, :new]
 
   def create
     @occupation = Occupation.new(occupation_params)
@@ -49,7 +50,8 @@ class OccupationsController < AdminController
   def occupation_params
     params.require(:occupation).permit(
       :company, :company_description, :company_url,
-      :end_date, :start_date, :title, details: []
+      :end_date, :start_date, :title,
+      details: [], tag_ids: []
     )
   end
 
@@ -59,5 +61,9 @@ class OccupationsController < AdminController
 
   def set_occupations
     @occupations = Occupation.by_date.all
+  end
+
+  def set_tags
+    @tags = Tag.all
   end
 end

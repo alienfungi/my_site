@@ -15,6 +15,9 @@
 #
 
 class Occupation < ActiveRecord::Base
+  has_many :taggings, as: :taggable
+  has_many :tags, through: :taggings
+
   validates_presence_of :company, :start_date, :title
 
   before_validation :prepare_details
