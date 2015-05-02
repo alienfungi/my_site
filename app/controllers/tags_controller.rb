@@ -56,6 +56,6 @@ class TagsController < AdminController
   end
 
   def set_tags
-    @tags = Tag.all
+    @tags = Tag.alphabetical
   end
 end
