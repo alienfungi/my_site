@@ -52,8 +52,8 @@ class OccupationsController < AdminController
 
   def occupation_params
     params.require(:occupation).permit(
-      :company, :company_description, :company_url,
-      :end_date, :start_date, :title,
+      :city, :company, :company_description, :company_url,
+      :end_date, :start_date, :state, :title,
       details: [], tag_ids: []
     )
   end
