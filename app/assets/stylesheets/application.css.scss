@@ -13,3 +13,31 @@
  *= require_tree ./application
  *= require_self
  */
+
+$layout-border: 1px solid BLACK;
+$layout-padding: 20px 0;
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+header {
+  border-bottom: $layout-border;
+  padding: $layout-padding;
+}
+main {
+  padding: $layout-padding;
+}
+footer {
+  border-top: $layout-border;
+  padding: $layout-padding;
+}
+.wrap {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+.pull-right {
+  text-align: right;
+}

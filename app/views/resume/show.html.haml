@@ -1,0 +1,10 @@
+- content_for :title do
+  Resume
+
+#resume
+  %h2 Education
+  = render partial: 'education', collection: @educations
+  %h2 Certifications
+  = render partial: 'certification', collection: @certifications
+  %h2 Employment Experience
+  = render partial: 'occupation', collection: @occupations
