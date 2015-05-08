@@ -43,6 +43,7 @@ group :development, :test do
   gem 'forgery', '0.6.0'
   # Rails console replacement
   gem 'pry-rails'
+  gem 'rspec-rails', '~> 3.2'
 end
 
 group :development do
