@@ -43,7 +43,6 @@ group :development, :test do
   gem 'forgery', '0.6.0'
   # Rails console replacement
   gem 'pry-rails'
-  gem 'rspec-rails', '~> 3.2'
 end
 
 group :development do
@@ -51,6 +50,9 @@ group :development do
   gem 'spring'
   # Adds schema info to models with annotate command
   gem 'annotate'
+  gem 'rspec-rails', '~> 3.2'
+  gem 'capybara', '~> 2.4'
+  gem 'selenium-webdriver', '~> 2.45'
 end
 
 group :production do

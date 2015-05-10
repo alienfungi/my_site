@@ -4,5 +4,5 @@
   %td.right
     = link_to edit_certification_path(certification), class: 'btn btn-primary' do
       %span.glyphicon.glyphicon-edit{ aria: { hidden: true } }
-    = link_to certification_path(certification), method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this certification?' } do
+    = link_to certification_path(certification), method: :delete, title: 'Delete', class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this certification?' } do
       %span.glyphicon.glyphicon-remove{ aria: { hidden: true } }
