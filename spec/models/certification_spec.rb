@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: certifications
+#
+#  id            :integer          not null, primary key
+#  date_acquired :date             not null
+#  name          :string(255)      not null
+#  organization  :string(255)      not null
+#  score         :string(255)
+#
+
 require 'rails_helper'
 
 RSpec.describe Certification do

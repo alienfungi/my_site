@@ -1,6 +1,3 @@
-ENV['MY_SITE_MY_USERNAME'] = 'username'
-ENV['MY_SITE_MY_PASSWORD'] = 'password'
-
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 

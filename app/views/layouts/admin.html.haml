@@ -29,6 +29,8 @@
               = link_to 'Occupations', occupations_path
             %li{ class: ('active' if params['controller'] == 'tags') }
               = link_to 'Tags', tags_path
+          %ul.nav.navbar-nav.navbar-right
+            %li= link_to 'Log out', logout_path
     .container
       - if content_for? :title
         %h1= yield :title

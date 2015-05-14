@@ -1,0 +1,7 @@
+- content_for :title do
+  Log in
+
+= form_for(:session, url: login_path) do |f|
+  = f.text_field :email, placeholder: 'Email', title: 'Email'
+  = f.password_field :password, placeholder: 'Password', title: 'Password'
+  = f.submit 'Log in'

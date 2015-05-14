@@ -1,14 +1,9 @@
 module AuthHelper
-  def http_login(name = 'username', password = 'password')
-    if page.driver.respond_to?(:basic_auth)
-        page.driver.basic_auth(name, password)
-    elsif page.driver.respond_to?(:basic_authorize)
-        page.driver.basic_authorize(name, password)
-    elsif page.driver.respond_to?(:browser) && page.driver.browser.respond_to?(:basic_authorize)
-        page.driver.browser.basic_authorize(name, password)
-    else
-        raise "I don't know how to log in!"
-    end
-    #request.env['HTTP_AUTHORIZATION'] = ActionController::HttpAuthentication::Basic.encode_credentials(user, password)
+  def log_in_as(user, options = {})
+    password = options.fetch(:password, 'password')
+    remember_me = options.fetch(:remember_me, true)
+    page.driver.post(login_path, session: {
+      email: user.email, password: password, remember_me: remember_me
+    })
   end
 end

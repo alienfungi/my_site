@@ -30,6 +30,8 @@ gem 'browser'
 gem 'simple_form'
 # Normalize model attributes
 gem 'attribute_normalizer'
+# Use ActiveModel has_secure_password
+gem 'bcrypt', '~> 3.1.7'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -43,6 +45,8 @@ group :development, :test do
   gem 'forgery', '0.6.0'
   # Rails console replacement
   gem 'pry-rails'
+  gem 'rspec-rails', '~> 3.2'
+  gem 'capybara', '~> 2.4'
 end
 
 group :development do
@@ -50,18 +54,12 @@ group :development do
   gem 'spring'
   # Adds schema info to models with annotate command
   gem 'annotate'
-  gem 'rspec-rails', '~> 3.2'
-  gem 'capybara', '~> 2.4'
-  gem 'selenium-webdriver', '~> 2.45'
 end
 
 group :production do
   # Needed for Heroku
   gem 'rails_12factor'
 end
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 # gem 'unicorn'

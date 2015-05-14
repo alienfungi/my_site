@@ -3,8 +3,10 @@ require 'rails_helper'
 describe 'adding certifications' do
   include AuthHelper
 
+  let!(:user) { User.create(email: 'email@example.com', password: 'password') }
+
   before(:each) do
-    http_login
+    log_in_as(user, { password: 'password' })
     visit admin_path
     click_link 'Certifications'
     click_link 'Add'

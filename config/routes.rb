@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
+  get  'login'  => 'sessions#new'
+  post 'login'  => 'sessions#create'
+  get  'logout' => 'sessions#destroy'
+
   scope :browser do
     get '/ie8' => 'browser_exception#ie8'
     get '/not_modern' => 'browser_exception#not_modern'
