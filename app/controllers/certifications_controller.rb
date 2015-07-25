@@ -28,6 +28,7 @@ class CertificationsController < AdminController
   end
 
   def index
+    @certification = Certification.new
   end
 
   def new

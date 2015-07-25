@@ -9,7 +9,7 @@ describe 'adding certifications' do
     log_in_as(user, { password: 'password' })
     visit admin_path
     click_link 'Certifications'
-    click_link 'Add'
+    click_link 'New'
   end
 
   describe 'with valid input' do

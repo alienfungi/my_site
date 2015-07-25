@@ -1,9 +1,7 @@
 - content_for :title do
   Education
 
-= link_to new_education_path, class: 'btn btn-primary' do
-  %span.glyphicon.glyphicon-plus{ aria: { hidden: true } }
-  Add
+= new_button :education
 %table.table
   %thead
     %tr

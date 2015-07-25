@@ -1,9 +1,7 @@
 - content_for :title do
   Certifications
 
-= link_to new_certification_path, class: 'btn btn-primary' do
-  %span.glyphicon.glyphicon-plus{ aria: { hidden: true } }
-  Add
+= new_button :certification
 %table.table
   %thead
     %tr

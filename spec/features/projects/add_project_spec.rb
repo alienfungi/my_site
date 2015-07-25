@@ -9,7 +9,7 @@ describe 'adding projects' do
     log_in_as(user, { password: 'password' })
     visit admin_path
     click_link 'Projects'
-    click_link 'Add'
+    click_link 'New'
   end
 
   describe 'with valid input' do

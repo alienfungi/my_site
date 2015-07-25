@@ -1,9 +1,7 @@
 - content_for :title do
   Occupations
 
-= link_to new_occupation_path, class: 'btn btn-primary' do
-  %span.glyphicon.glyphicon-plus{ aria: { hidden: true } }
-  Add
+= new_button :occupation
 %table.table
   %thead
     %tr

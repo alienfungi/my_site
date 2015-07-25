@@ -27,13 +27,14 @@ module ApplicationHelper
     link_to([:edit, object], html_options) { glyphicon_tag 'edit' }
   end
 
-  def glyphicon_tag(name)
-    tag(:span, class: "glyphicon glyphicon-#{ name }", aria: { hidden: true })
+  def glyphicon_tag(name, content = nil)
+    options = { class: "glyphicon glyphicon-#{ name }", aria: { hidden: true } }
+    content ? content_tag(:span, content, options) : tag(:span, options)
   end
 
-  def new_button(object, html_options = {})
+  def new_button(symbol, html_options = {})
     html_options.merge!({ class: 'btn btn-primary', name: 'New', title: 'New' })
-    link_to([object], html_options) { glyphicon_tag 'add' }
+    link_to([:new, symbol], html_options) { glyphicon_tag 'plus', 'New' }
   end
 
   def show_button(object, html_options = {})

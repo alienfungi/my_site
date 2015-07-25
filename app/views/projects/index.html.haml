@@ -1,8 +1,7 @@
 - content_for :title do
   Projects
-= link_to new_project_path, class: 'btn btn-primary' do
-  %span.glyphicon.glyphicon-plus{ aria: { hidden: true } }
-  Add
+
+= new_button :project
 %table.table
   %thead
     %tr
