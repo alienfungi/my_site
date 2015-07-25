@@ -27,6 +27,8 @@
               = link_to 'Education', educations_path
             %li{ class: ('active' if params['controller'] == 'occupations') }
               = link_to 'Occupations', occupations_path
+            %li{ class: ('active' if params['controller'] == 'projects') }
+              = link_to 'Projects', projects_path
             %li{ class: ('active' if params['controller'] == 'tags') }
               = link_to 'Tags', tags_path
           %ul.nav.navbar-nav.navbar-right

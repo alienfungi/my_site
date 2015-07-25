@@ -1,0 +1,5 @@
+- content_for :title do
+  Edit Project
+
+= simple_form_for @project do |f|
+  = render partial: 'form', locals: { f: f }

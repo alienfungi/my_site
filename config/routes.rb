@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :certifications
     resources :educations
     resources :occupations
+    resources :projects
     resources :tags
   end
 end
