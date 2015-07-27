@@ -1,0 +1,12 @@
+= f.input :school
+= f.input :field_of_study
+= f.input :degree
+= f.input :city
+= f.input :state
+= f.input :start_date, start_year: f.object.min_year, end_year: f.object.max_year
+= f.input :end_date, include_blank: true, start_year: f.object.min_year, end_year: f.object.max_year
+- if @tags.any?
+  = f.association :tags, as: :check_boxes, checked: f.object.tag_ids,
+    collection: @tags.map { |t| [t.name, t.id] }
+= f.submit 'Save', class: 'btn btn-primary'
+= link_to 'Cancel', admin_educations_path, class: 'btn btn-default'

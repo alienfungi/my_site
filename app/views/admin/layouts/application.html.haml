@@ -1,0 +1,42 @@
+!!! 5
+%html
+  %head
+    %title
+      Admin
+      = "| #{ yield :title }" if content_for? :title
+    = stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'admin', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %nav.navbar.navbar-inverse
+      .container
+        .navbar-header
+          %button.navbar-toggle.collapsed{ aria: { controls: 'navbar', expanded: 'false' }, data: { target: '#navbar', toggle: 'collapse' }, type: 'button' }
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to '<3', root_path, class: 'navbar-brand'
+        #navbar.collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li{ class: ('active' if params['action'] == 'home') }
+              = link_to 'Admin', admin_root_path
+            %li{ class: ('active' if params['controller'] == 'certifications') }
+              = link_to 'Certifications', admin_certifications_path
+            %li{ class: ('active' if params['controller'] == 'education') }
+              = link_to 'Education', admin_educations_path
+            %li{ class: ('active' if params['controller'] == 'occupations') }
+              = link_to 'Occupations', admin_occupations_path
+            %li{ class: ('active' if params['controller'] == 'projects') }
+              = link_to 'Projects', admin_projects_path
+            %li{ class: ('active' if params['controller'] == 'tags') }
+              = link_to 'Tags', admin_tags_path
+          %ul.nav.navbar-nav.navbar-right
+            %li= link_to 'Log out', logout_path
+    .container
+      - if content_for? :title
+        %h1= yield :title
+
+      = render 'layouts/flash_messages'
+
+      = yield

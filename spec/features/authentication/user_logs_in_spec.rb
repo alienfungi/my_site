@@ -15,7 +15,7 @@ describe 'user logs in' do
     end
 
     it 'redirects to the admin homepage' do
-      expect(current_path).to eq(admin_path)
+      expect(current_path).to eq(admin_root_path)
     end
 
     it 'displays a link to log out' do

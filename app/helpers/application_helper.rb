@@ -19,12 +19,12 @@ module ApplicationHelper
       method: :delete, class: 'btn btn-danger', name: 'Destroy', title: 'Destroy',
       data: { confirm: "Are you sure you want to destroy this #{ object.class.name }" }
     })
-    link_to([object], html_options) { glyphicon_tag 'remove' }
+    link_to([:admin, object], html_options) { glyphicon_tag 'remove' }
   end
 
   def edit_button(object, html_options = {})
     html_options.merge!({ class: 'btn btn-primary', name: 'Edit', title: 'Edit' })
-    link_to([:edit, object], html_options) { glyphicon_tag 'edit' }
+    link_to([:edit, :admin, object], html_options) { glyphicon_tag 'edit' }
   end
 
   def glyphicon_tag(name, content = nil)
@@ -34,7 +34,7 @@ module ApplicationHelper
 
   def new_button(symbol, html_options = {})
     html_options.merge!({ class: 'btn btn-primary', name: 'New', title: 'New' })
-    link_to([:new, symbol], html_options) { glyphicon_tag 'plus', 'New' }
+    link_to([:new, :admin, symbol], html_options) { glyphicon_tag 'plus', 'New' }
   end
 
   def show_button(object, html_options = {})

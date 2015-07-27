@@ -7,7 +7,7 @@ describe 'user logs out' do
 
   before(:each) do
     log_in_as(user, { password: 'password' })
-    visit admin_path
+    visit admin_root_path
     click_link 'Log out'
   end
 
@@ -16,6 +16,6 @@ describe 'user logs out' do
   end
 
   it 'no longer allows me to visit logged in only paths' do
-    expect { visit admin_path }.to raise_error(ActionController::RoutingError)
+    expect { visit admin_root_path }.to raise_error(ActionController::RoutingError)
   end
 end

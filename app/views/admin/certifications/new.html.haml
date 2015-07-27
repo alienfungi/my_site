@@ -1,0 +1,5 @@
+- content_for :title do
+  New Certification
+
+= simple_form_for @certification, url: [:admin, @certification] do |f|
+  = render partial: 'form', locals: { f: f }
