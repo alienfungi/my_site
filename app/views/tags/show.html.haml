@@ -1,0 +1,17 @@
+- content_for :title do
+  = @tag.name
+
+#tag
+  - if @tag.certifications.any?
+    %h2 Certifications
+    = render @tag.certifications
+  - if @tag.educations.any?
+    %h2 Education
+    = render @tag.educations
+  - if @tag.occupations.any?
+    %h2 Occupations
+    = render @tag.occupations
+  - if @tag.projects.any?
+    %h2 Projects
+    = render @tag.projects
+  %p= link_to 'Back', [:tags]

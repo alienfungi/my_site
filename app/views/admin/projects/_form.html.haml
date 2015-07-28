@@ -3,5 +3,8 @@
 = f.input :link
 = f.input :source_link
 = f.input :image
+- if @tags.any?
+  = f.association :tags, as: :check_boxes, checked: f.object.tag_ids,
+    collection: @tags.map { |t| [t.name, t.id] }
 = f.submit 'Save', class: 'btn btn-primary'
 = link_to 'Cancel', admin_projects_path, class: 'btn btn-default'

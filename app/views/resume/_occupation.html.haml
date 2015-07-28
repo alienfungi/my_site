@@ -1,6 +1,7 @@
 %table
   %tr
     %td
+      %h3= occupation.title
       = occupation.company
       = ", #{ occupation.city }" if occupation.city?
       = ", #{ occupation.state }" if occupation.state?

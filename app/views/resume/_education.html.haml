@@ -8,9 +8,9 @@
         - if education.state?
           = education.state
       %td.pull-right
-        #{ education.start_date.month } #{ education.start_date.year } -
+        #{ education.start_date.strftime('%B %Y') } -
         - if education.end_date?
-          #{ education.end_date.month } #{ education.end_date.year }
+          #{ education.end_date.strftime('%B %Y') }
         - else
           Present
     %tr

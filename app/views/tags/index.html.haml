@@ -1,0 +1,6 @@
+- content_for :title do
+  Skills
+
+- @tags.each_with_index do |tag, index|
+  = succeed(index < @tags.length - 1 ? ',' : '') do
+    = link_to tag.name, tag_path(tag.slug)
