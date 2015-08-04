@@ -10,14 +10,42 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree ./application
+ *= require normalize-rails
  *= require_self
+ *= require_tree ./application
  */
 
-$layout-border: 1px solid BLACK;
+$background-color: black;
+$font-color: white;
+$layout-border: 1px solid;
 $layout-padding: 20px 0;
 
 
+@font-face {
+  font-family: 'UbuntuMono';
+  src: font-url('UbuntuMono-R.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'UbuntuMono';
+  src: font-url('UbuntuMono-RI.ttf') format('truetype');
+  font-style: italic;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'UbuntuMono';
+  src: font-url('UbuntuMono-B.ttf') format('truetype');
+  font-style: normal;
+  font-weight: bold;
+}
+
+html {
+  background-color: $background-color;
+  color: $font-color;
+  font-family: 'UbuntuMono';
+  font-weight: normal;
+}
 html, body {
   margin: 0;
   padding: 0;
@@ -33,6 +61,12 @@ footer {
   border-top: $layout-border;
   padding: $layout-padding;
 }
+a {
+  color: #40FF00;
+  &:visited {
+    color: #FF0000;
+  }
+}
 .wrap {
   margin: 0 auto;
   max-width: 1200px;
@@ -40,4 +74,38 @@ footer {
 }
 .pull-right {
   text-align: right;
+}
+
+/*
+ * Blinking Cursor
+ */
+.blinking-cursor {
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+  &:after {
+    content: "\258a";
+  }
+}
+@keyframes "blink" {
+  from, to { color: transparent; }
+  50% { color: $font-color; }
+}
+@-moz-keyframes blink {
+  from, to { color: transparent; }
+  50% { color: $font-color; }
+}
+@-webkit-keyframes "blink" {
+  from, to { color: transparent; }
+  50% { color: $font-color; }
+}
+@-ms-keyframes "blink" {
+  from, to { color: transparent; }
+  50% { color: $font-color; }
+}
+@-o-keyframes "blink" {
+  from, to { color: transparent; }
+  50% { color: $font-color; }
 }

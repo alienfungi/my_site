@@ -20,7 +20,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'bootstrap-sass', '~> 3.3.4'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+# Turbolinks makes following links in your web application faster.
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
@@ -32,6 +32,8 @@ gem 'simple_form'
 gem 'attribute_normalizer'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+# makes browsers render all elements more consistently
+gem 'normalize-rails'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

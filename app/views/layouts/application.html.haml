@@ -8,7 +8,9 @@
   %body
     %header
       .wrap
-        %h1= yield :title
+        %h1
+          %span<= yield :title
+          %span.blinking-cursor>
     %main
       .wrap
         = yield
