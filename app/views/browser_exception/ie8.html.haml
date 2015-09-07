@@ -1,2 +1,7 @@
-%h1 Your browser is broken. Please leave
-%p= link_to 'Exit', 'http://browserupdate.org/update.html'
+- content_for :title do
+  \:(
+%h1 Internet Explorer 8 detected!!1
+%p This site prohibits the use of terrible browsers.
+%p
+  Please leave:
+  = link_to 'exit', 'http://browserupdate.org/update.html'
