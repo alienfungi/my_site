@@ -2,9 +2,12 @@
   Resume
 
 #resume
-  %h2 Education
-  = render partial: 'education', collection: @educations
-  %h2 Certifications
-  = render partial: 'certification', collection: @certifications
-  %h2 Employment Experience
-  = render partial: 'occupation', collection: @occupations
+  %section#education
+    %h2 Education
+    = render partial: 'education', collection: @educations
+  %section#certifications
+    %h2 Certifications
+    = render partial: 'certification', collection: @certifications
+  %section#experience
+    %h2 Employment Experience
+    = render partial: 'occupation', collection: @occupations

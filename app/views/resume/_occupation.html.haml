@@ -1,16 +1,16 @@
-%table
-  %tr
-    %td
-      %h3= occupation.title
-      = occupation.company
-      = ", #{ occupation.city }" if occupation.city?
-      = ", #{ occupation.state }" if occupation.state?
-    %td.pull-right
-      #{ occupation.start_date.strftime('%B %Y') } -
-      - if occupation.end_date?
-        = occupation.end_date.strftime('%B %Y')
-      - else
-        Present
-%ul
-  - occupation.details.each do |detail|
-    %li= detail
+.entry
+  .heading
+    %h3= occupation.title
+    = occupation.company
+    = ", #{ occupation.city }" if occupation.city?
+    = ", #{ occupation.state }" if occupation.state?
+  .time
+    #{ occupation.start_date.strftime('%B %Y') } -
+    - if occupation.end_date?
+      = occupation.end_date.strftime('%B %Y')
+    - else
+      Present
+  .description
+    %ul
+      - occupation.details.each do |detail|
+        %li= detail

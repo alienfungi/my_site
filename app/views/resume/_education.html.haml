@@ -1,23 +1,20 @@
-%table
-  %tbody
-    %tr
-      %td
-        = education.school + (',' if education.city || education.state?)
-        - if education.city?
-          = education.city + (',' if education.state)
-        - if education.state?
-          = education.state
-      %td.pull-right
-        #{ education.start_date.strftime('%B %Y') } -
-        - if education.end_date?
-          #{ education.end_date.strftime('%B %Y') }
-        - else
-          Present
-    %tr
-      %td{ colspan: 2 }
-        - if education.degree?
-          = education.degree
-          - if education.field_of_study?
-            in #{ education.field_of_study }
-        - elsif education.field_of_study?
-          Field of study: #{ education.field_of_study }
+.entry
+  .heading
+    = education.school + (',' if education.city || education.state?)
+    - if education.city?
+      = education.city + (',' if education.state)
+    - if education.state?
+      = education.state
+  .time
+    #{ education.start_date.strftime('%B %Y') } -
+    - if education.end_date?
+      #{ education.end_date.strftime('%B %Y') }
+    - else
+      Present
+  .description
+    - if education.degree?
+      = education.degree
+      - if education.field_of_study?
+        in #{ education.field_of_study }
+    - elsif education.field_of_study?
+      Field of study: #{ education.field_of_study }

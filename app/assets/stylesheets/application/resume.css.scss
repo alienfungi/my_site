@@ -1,5 +1,27 @@
 #resume {
-  table {
-    width: 100%;
+  .entry {
+    overflow: auto;
+    padding-bottom: 20px;
+  }
+  .heading {
+    float: left;
+    width: 60%;
+  }
+  .time {
+    float: left;
+    text-align: right;
+    width: 40%;
+  }
+  .description {
+    clear: both;
+  }
+
+  @media (max-width: 700px) {
+    .heading, .time {
+      width: 100%;
+    }
+    .time {
+      text-align: left;
+    }
   }
 }
