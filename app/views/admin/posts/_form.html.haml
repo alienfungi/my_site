@@ -2,6 +2,8 @@
 = f.input :slug
 = f.input :private
 = f.input :summary
-= f.input :body, input_html: { data: { provide: "markdown" }, rows: 20 }
+= f.input :body, input_html: { rows: 20 }
 = f.submit 'Save', class: 'btn btn-primary'
 = link_to 'Cancel', admin_posts_path, class: 'btn btn-default'
+:javascript
+  $('#post_body').markdown();

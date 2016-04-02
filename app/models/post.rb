@@ -17,4 +17,5 @@ class Post < ActiveRecord::Base
   validates_uniqueness_of :slug, :title
 
   scope :by_date, -> { order(created_at: :desc) }
+  scope :live, -> { where(private: false) }
 end
