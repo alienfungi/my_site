@@ -1,0 +1,5 @@
+- content_for :title do
+  New Post
+
+= simple_form_for @post, url: [:admin, @post] do |f|
+  = render partial: 'form', locals: { f: f }

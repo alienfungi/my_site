@@ -1,0 +1,9 @@
+- content_for :title do
+  Blog
+
+%ul
+  - @posts.each do |post|
+    %li
+      = link_to post.title, blog_post_path(post.slug)
+      = post.created_at.strftime('%Y-%m-%d %H:%M %Z')
+

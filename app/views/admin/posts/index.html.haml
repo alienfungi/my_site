@@ -1,0 +1,11 @@
+- content_for :title do
+  Posts
+
+= new_button :post
+%table.table
+  %thead
+    %tr
+      %th Title
+      %th{ colspan: 2 } Slug
+  %tbody
+    = render @posts
