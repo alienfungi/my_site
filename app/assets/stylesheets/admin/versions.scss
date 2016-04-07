@@ -1,0 +1,15 @@
+.diff {
+  ul {
+    list-style-type: none;
+
+    del {
+      color: red;
+      text-decoration: none;
+    }
+
+    ins {
+      color: green;
+      text-decoration: none;
+    }
+  }
+}

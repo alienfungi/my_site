@@ -6,6 +6,7 @@ class Admin::ApplicationController < ActionController::Base
 
   before_action :check_authorization
   before_action :set_view_path
+  before_action :set_paper_trail_whodunnit
 
   private
 

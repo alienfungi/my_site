@@ -1,0 +1,10 @@
+%tr
+  %td= version.created_at
+  %td= version.event
+  %td.right
+    = link_to admin_diff_version_path(@object_type, @object.id, version.id),
+      class: 'btn btn-primary', title: 'Diff' do
+      %span{ class: 'glyphicon glyphicon-search' }
+    = link_to admin_restore_version_path(@object_type, @object.id, version.id),
+      class: 'btn btn-danger', title: 'Restore' do
+      %span{ class: 'glyphicon glyphicon-repeat' }

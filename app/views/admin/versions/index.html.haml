@@ -1,0 +1,14 @@
+- content_for :title do
+  History
+
+%table.table
+  %thead
+    %tr
+      %th Date
+      %th{ colspan: 2 } Event
+  %tbody
+    = render partial: 'version', collection: @versions
+
+= link_to 'Back',
+  [:admin, @object.class.name.downcase.pluralize],
+  class: 'btn btn-primary'

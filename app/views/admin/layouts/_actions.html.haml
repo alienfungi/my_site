@@ -1,2 +1,6 @@
 = edit_button object
+- if object.respond_to? :versions
+  = link_to admin_versions_path(object.class.name, object.id),
+    class: 'btn btn-warning', title: 'History' do
+    %span{ class: 'glyphicon glyphicon-time' }
 = destroy_button object

@@ -22,5 +22,11 @@ Rails.application.routes.draw do
     resources :occupations
     resources :projects
     resources :tags
+    get '/:object_type/:object_id/versions' => 'versions#index',
+      as: 'versions'
+    get '/:object_type/:object_id/version/:id/diff' => 'versions#diff',
+      as: 'diff_version'
+    get '/:object_type/:object_id/version/:id/restore' => 'versions#restore',
+      as: 'restore_version'
   end
 end

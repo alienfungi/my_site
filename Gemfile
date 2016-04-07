@@ -35,8 +35,12 @@ gem 'simple_form'
 gem 'attribute_normalizer'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-# makes browsers render all elements more consistently
+# Makes browsers render all elements more consistently
 gem 'normalize-rails'
+# Record past states of models
+gem 'paper_trail'
+# Diffing
+gem 'diffy'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
