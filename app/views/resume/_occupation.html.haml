@@ -1,9 +1,9 @@
 .entry
   .heading
     %h3= occupation.title
-    = occupation.company
-    = ", #{ occupation.city }" if occupation.city?
-    = ", #{ occupation.state }" if occupation.state?
+    %span>= occupation.company
+    %span>= ", #{ occupation.city }" if occupation.city?
+    %span= ", #{ occupation.state }" if occupation.state?
   .time
     #{ occupation.start_date.strftime('%B %Y') } -
     - if occupation.end_date?
@@ -11,6 +11,7 @@
     - else
       Present
   .description
-    %ul
-      - occupation.details.each do |detail|
-        %li= detail
+    - if occupation.details.any?
+      %ul
+        - occupation.details.each do |detail|
+          %li= detail

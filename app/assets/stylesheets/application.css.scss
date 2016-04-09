@@ -50,6 +50,25 @@ html, body {
   margin: 0;
   padding: 0;
 }
+h1, h2, h3, h4, h5, p, ul, ol {
+  margin: 0;
+  padding-bottom: 20px;
+}
+ul, ol {
+  padding-left: 40px;
+}
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 1.5em;
+}
+h3 {
+  size: 1.25em;
+}
+p, h4, h5 {
+  size: 1em;
+}
 header {
   border-bottom: $layout-border;
   padding: $layout-padding;

@@ -4,10 +4,8 @@ Rails.application.routes.draw do
   get 'login'  => 'sessions#new'
   post 'login'  => 'sessions#create'
   get 'logout' => 'sessions#destroy'
-  resources :tags, only: [:index]
-  get 'blog' => 'posts#index'
-  get 'blog/:slug' => 'posts#show', as: 'blog_post'
-  get 'tags/:slug' => 'tags#show', as: 'tag'
+  resources :posts, param: :slug, path: 'blog', only: [:index, :show]
+  resources :tags, param: :slug, path: 'skills', only: [:index, :show]
 
   scope :browser do
     get '/ie8' => 'browser_exception#ie8'
