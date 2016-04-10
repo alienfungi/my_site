@@ -97,6 +97,19 @@ input {
 .pull-right {
   text-align: right;
 }
+#edit_page a {
+  border: 2px solid red;
+  border-radius: 5px;
+  color: red;
+  float: right;
+  font-weight: bold;
+  padding: 10px;
+  text-decoration: none;
+  &:hover {
+    background-color: red;
+    color: black;
+  }
+}
 
 /*
  * Blinking Cursor

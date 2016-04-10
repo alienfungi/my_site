@@ -41,4 +41,24 @@ module ApplicationHelper
     html_options.merge!({ class: 'btn btn-primary', name: 'Show', title: 'Show' })
     link_to([object], html_options) { glyphicon_tag 'eye-open' }
   end
+
+  # Depends on @regions being set in ApplicationController
+  def inline_editable(region_name)
+    content = @regions[region_name.to_sym]
+    attributes =
+      if logged_in?
+        {
+          id: "mercury_#{ region_name }",
+          data: {
+            action: params[:action],
+            controller: params[:controller],
+            mercury: 'full',
+            name: region_name
+          }
+        }
+      else
+        {}
+      end
+    content_tag :div, raw(content), attributes
+  end
 end

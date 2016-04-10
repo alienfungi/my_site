@@ -41,6 +41,8 @@ gem 'normalize-rails'
 gem 'paper_trail'
 # Diffing
 gem 'diffy'
+# Inline editor
+gem 'mercury-rails', github: 'jejacks0n/mercury'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

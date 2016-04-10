@@ -20,6 +20,6 @@ module MySite
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    config.assets.precompile += %w(admin.css admin.js)
+    config.assets.precompile += %w(admin.css admin.js mercury.js jquery-1.7.js)
   end
 end

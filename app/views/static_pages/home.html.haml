@@ -1,6 +1,8 @@
 - content_for :title do
   Index
 
+= inline_editable(:main)
+
 %ul
   %li= link_to 'Resume', resume_path
   %li= link_to 'Skills', tags_path

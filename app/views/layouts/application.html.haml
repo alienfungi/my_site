@@ -5,9 +5,18 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
+    - if logged_in?
+      :javascript
+        function onMercuryReady() { Mercury.saveUrl = '/mercury_update'; }
   %body
     %header
       .wrap
+        - if logged_in?
+          #edit_page
+            - if params[:mercury_frame]
+              = link_to 'CANCEL', request.path
+            - else
+              = link_to 'EDIT', "/editor#{ request.path }"
         %h1
           %span<= yield :title
           %span.blinking-cursor>
