@@ -18,6 +18,9 @@ class Post < ActiveRecord::Base
   validates_presence_of :body, :slug, :summary, :title
   validates_uniqueness_of :slug, :title
 
+  before_validation :set_slug
+  before_validation :set_summary
+
   scope :by_date, -> { order(created_at: :desc) }
   scope :live, -> { where(private: false) }
 
@@ -27,5 +30,15 @@ class Post < ActiveRecord::Base
 
   def paper_trail_tracked
     [:body]
+  end
+
+  private
+
+  def set_slug
+    self.slug = title.parameterize if slug.blank?
+  end
+
+  def set_summary
+    self.summary = body.truncate(155) if summary.blank?
   end
 end
