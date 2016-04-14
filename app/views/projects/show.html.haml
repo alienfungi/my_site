@@ -1,0 +1,20 @@
+- content_for :title do
+  Projects: #{ @project.name }
+
+#project
+  %p= @project.description
+
+  %ul
+    %li
+      Location:
+      - if @project.link.blank?
+        N/A
+      - else
+        = link_to @project.link, @project.link, target: '_blank'
+    %li
+      Source:
+      - if @project.source_link.blank?
+        N/A
+      - else
+        = link_to @project.source_link, @project.source_link, target: '_blank'
+  %p= link_to 'Back', projects_path
