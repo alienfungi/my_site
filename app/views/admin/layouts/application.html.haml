@@ -21,20 +21,13 @@
           = link_to '<3', root_path, class: 'navbar-brand', target: '_blank'
         #navbar.collapse.navbar-collapse
           %ul.nav.navbar-nav
-            %li{ class: ('active' if params['action'] == 'home') }
-              = link_to 'Admin', admin_root_path
-            %li{ class: ('active' if params['controller'] == 'posts') }
-              = link_to 'Posts', admin_posts_path
-            %li{ class: ('active' if params['controller'] == 'certifications') }
-              = link_to 'Certifications', admin_certifications_path
-            %li{ class: ('active' if params['controller'] == 'education') }
-              = link_to 'Education', admin_educations_path
-            %li{ class: ('active' if params['controller'] == 'occupations') }
-              = link_to 'Occupations', admin_occupations_path
-            %li{ class: ('active' if params['controller'] == 'projects') }
-              = link_to 'Projects', admin_projects_path
-            %li{ class: ('active' if params['controller'] == 'tags') }
-              = link_to 'Tags', admin_tags_path
+            = nav_link_to('Admin', admin_root_path, 'static_pages')
+            = nav_link_to('Posts')
+            = nav_link_to('Certifications')
+            = nav_link_to('Education')
+            = nav_link_to('Occupations')
+            = nav_link_to('Projects')
+            = nav_link_to('Tags')
           %ul.nav.navbar-nav.navbar-right
             %li= link_to 'Log out', logout_path
     .container

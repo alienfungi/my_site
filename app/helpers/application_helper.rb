@@ -39,6 +39,15 @@ module ApplicationHelper
     end
   end
 
+  def nav_link_to(name, path = nil, kontroller = nil)
+    kontroller ||= name.downcase.pluralize
+    path ||= [:admin, kontroller]
+    active = 'active' if params['controller'] == "admin/#{ kontroller }"
+    content_tag :li, class: active do
+      link_to(name, path)
+    end
+  end
+
   def new_button(symbol, html_options = {})
     html_options.merge!({ class: 'btn btn-primary', name: 'New', title: 'New' })
     link_to([:new, :admin, symbol], html_options) { glyphicon_tag 'plus', 'New' }
