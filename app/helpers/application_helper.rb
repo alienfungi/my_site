@@ -32,14 +32,21 @@ module ApplicationHelper
     content ? content_tag(:span, content, options) : tag(:span, options)
   end
 
+  def history_button(object, html_options = {})
+    html_options.merge!({ class: 'btn btn-warning', name: 'History', title: 'History' })
+    link_to(admin_versions_path(object.class.name, object.id), html_options) do
+      glyphicon_tag 'time'
+    end
+  end
+
   def new_button(symbol, html_options = {})
     html_options.merge!({ class: 'btn btn-primary', name: 'New', title: 'New' })
     link_to([:new, :admin, symbol], html_options) { glyphicon_tag 'plus', 'New' }
   end
 
   def show_button(object, html_options = {})
-    html_options.merge!({ class: 'btn btn-primary', name: 'Show', title: 'Show' })
-    link_to([object], html_options) { glyphicon_tag 'eye-open' }
+    html_options.merge!({ class: 'btn btn-info', name: 'Show', title: 'Show' })
+    link_to([:admin, object], html_options) { glyphicon_tag 'eye-open' }
   end
 
   # Depends on @regions being set in ApplicationController

@@ -1,0 +1,6 @@
+- content_for :title do
+  Post: #{ @post.title }
+
+#post
+  = raw @markdown.render(@post.body)
+  %p= link_to 'Back', admin_posts_path, class: 'btn btn-primary'

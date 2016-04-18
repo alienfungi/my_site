@@ -33,6 +33,8 @@ class Admin::PostsController < Admin::ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
+    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
   end
 
   def update
