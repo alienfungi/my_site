@@ -21,10 +21,13 @@
         %h1
           %span<= yield :title
           %span.blinking-cursor>
+      %nav
+        .wrap
+          %ul
+            - nav_links.each do |text, path|
+              %li>= link_to text, path, class: (current_page?(path) ? 'selected' : '')
+            %li
+              = link_to raw('&#9776;'), 'javascript:void(0)', id: 'sandwhich'
     %main
       .wrap
         = yield
-    - unless current_page? root_path
-      %footer
-        .wrap
-          = link_to 'Index', root_path

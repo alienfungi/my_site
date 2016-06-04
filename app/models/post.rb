@@ -24,6 +24,17 @@ class Post < ActiveRecord::Base
   scope :by_date, -> { order(created_at: :desc) }
   scope :live, -> { where(private: false) }
 
+  def self.markdown_options
+    {
+      mark: true,
+      quote: true,
+      superscript: true,
+      strikethrough: true,
+      tables: true,
+      underline: true
+    }
+  end
+
   def paper_trail_overrides
     [:private, :slug, :summary, :title]
   end

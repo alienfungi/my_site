@@ -5,6 +5,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.live.find_by_slug(params[:slug])
-    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+    @markdown =
+      Redcarpet::Markdown.new(Redcarpet::Render::HTML, Post.markdown_options)
   end
 end

@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  helper :application
   include SessionsHelper
 
   # Prevent CSRF attacks by raising an exception.

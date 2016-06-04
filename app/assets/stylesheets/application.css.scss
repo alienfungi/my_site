@@ -19,6 +19,8 @@ $background-color: black;
 $font-color: white;
 $layout-border: 1px solid;
 $layout-padding: 20px 0;
+$unvisited: #40FF00;
+$visited: #FF0000;
 
 
 @font-face {
@@ -70,9 +72,44 @@ h3 {
   font-size: 1.25em;
 }
 header {
-  border-bottom: $layout-border;
   padding: $layout-padding;
+  nav {
+    margin: 0;
+    overflow: hidden;
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      display: inline-block;
+      float: left;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      a {
+        border-left: 1px solid;
+        color: white;
+        display: block;
+        padding: 0.25em 0.5em;
+        text-decoration: none;
+        &:visited {
+          color: white;
+        }
+        &:hover {
+          background-color: $unvisited;
+          color: black;
+        }
+        &.selected {
+          text-decoration: line-through;
+        }
+      }
+      &:last-child {
+        display: none;
+      }
+    }
+  }
 }
+
 main {
   padding: $layout-padding;
 }
@@ -81,9 +118,9 @@ footer {
   padding: $layout-padding;
 }
 a {
-  color: #40FF00;
+  color: $unvisited;
   &:visited {
-    color: #FF0000;
+    color: $visited;
   }
 }
 input {
@@ -143,4 +180,45 @@ input {
 @-o-keyframes "blink" {
   from, to { color: transparent; }
   50% { color: $font-color; }
+}
+
+@media screen and (max-width: 680px) {
+  header {
+    border-bottom: 1px solid;
+    padding-bottom: 0;
+    nav {
+      ul {
+        li {
+          display: none;
+          &:first-child {
+            display: inline-block;
+          }
+          &:last-child {
+            float: right;
+            display: inline-block;
+          }
+          a {
+            border: none;
+            padding: .75em;
+          }
+        }
+      }
+    }
+  }
+  header.responsive nav {
+    ul {
+      position: relative;
+    }
+    li {
+      &:not(:last-child) {
+        display: inline;
+        float: none;
+      }
+      &:last-child {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
 }

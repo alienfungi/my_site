@@ -10,5 +10,11 @@
 # Read Sprockets README (https:#github.com/sstephenson/sprockets#sprockets-directives) for details
 # about supported directives.
 #
+#= require jquery
 #= require turbolinks
 #= require_tree ./application/.
+
+$(document).on 'ready page:load', ->
+  $('#sandwhich').click (e)->
+    e.preventDefault
+    $(this).closest('header').toggleClass 'responsive'
