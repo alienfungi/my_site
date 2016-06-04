@@ -1,9 +1,11 @@
 - content_for :title do
   Blog
 
-%ul
-  - @posts.each do |post|
-    %li
-      = link_to post.title, post_path(post.slug)
-      = post.created_at.strftime('%Y-%m-%d %H:%M %Z')
+#blog
+  %ul
+    - @posts.each do |post|
+      %li
+        = link_to truncate(post.title, length: 50),
+          post_path(post.slug), title: post.title
+        .date= post.created_at.strftime('%Y-%m-%d %H:%M %Z')
 

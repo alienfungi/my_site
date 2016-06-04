@@ -1,0 +1,11 @@
+#blog {
+  .date {
+    float: right;
+  }
+
+  @media screen and (max-width: $size-medium) {
+    .date {
+      float: none;
+    }
+  }
+}
