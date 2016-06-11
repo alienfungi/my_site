@@ -83,7 +83,7 @@ class ResumePdf < Prawn::Document
     list = []
     items.each_with_index do |item, index|
       padding = (index == items.length - 1) ? 0 : [0, 0, 5, 0]
-      bullet = make_cell(content: '•', borders: [], padding: padding, width: 10)
+      bullet = make_cell(content: "\u2022", borders: [], padding: padding, width: 10)
       value = make_cell(content: item, borders: [], padding: padding)
       list << [bullet, value]
     end

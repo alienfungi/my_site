@@ -1,0 +1,33 @@
+name:    Paul "Zane" Woodfin
+email:   zanewoodfin@gmail.com
+website: www.zanewoodfin.com
+
+
+Education
+---------
+<% @resume.educations.each do |education| %>
+<%= education_time(education) %>
+  <%= education_heading(education) %>
+  <%= education_description(education) %>
+
+<% end %>
+
+Certifications
+--------------
+<% @resume.certifications.each do |certification| %>
+<%= certification_time(certification) %>
+  <%= certification_heading(certification) %>
+
+<% end %>
+
+Work Experience
+---------------
+<% @resume.occupations.each do |occupation| %>
+<%= occupation_time(occupation) %>
+  <%= occupation.title %>
+  <%= occupation_heading(occupation) %>
+  <% occupation.details.each do |detail| %>
+  - <%= detail %>
+  <% end %>
+
+<% end %>

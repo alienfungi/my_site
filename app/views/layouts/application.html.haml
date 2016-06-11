@@ -15,9 +15,9 @@
         - if logged_in?
           #edit_page
             - if params[:mercury_frame]
-              = link_to 'CANCEL', request.path
+              = link_to 'CANCEL', request.path, class: 'button alert'
             - else
-              = link_to 'EDIT', "/editor#{ request.path }"
+              = link_to 'EDIT', "/editor#{ request.path }", class: 'button alert'
         %h1
           %span<= yield :title
           %span.blinking-cursor>

@@ -4,6 +4,11 @@ class ResumeController < ApplicationController
   def show
     respond_to do |format|
       format.html
+      format.text do
+        text = render_to_string('show.text')
+        filename = "#{ @resume.filename }.txt"
+        send_data text, filename: filename, type: 'text/plain'
+      end
       format.pdf do
         pdf = ResumePdf.new(@resume, view_context)
         filename = "#{ @resume.filename }.pdf"

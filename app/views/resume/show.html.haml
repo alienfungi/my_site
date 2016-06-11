@@ -11,4 +11,5 @@
   %section#experience
     %h2 Employment Experience
     = render partial: 'occupation', collection: @resume.occupations
-  = link_to 'Generate PDF', resume_path(format: :pdf)
+  = link_to "\u2193 PDF", resume_path(format: :pdf), class: 'button'
+  = link_to "\u2193 TXT", resume_path(format: :text), class: 'button'
