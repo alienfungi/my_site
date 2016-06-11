@@ -43,6 +43,9 @@ gem 'paper_trail'
 gem 'diffy'
 # Inline editor
 gem 'mercury-rails', github: 'jejacks0n/mercury'
+# PDF Generation
+gem 'prawn'
+gem 'prawn-table'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

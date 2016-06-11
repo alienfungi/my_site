@@ -5,11 +5,7 @@
     %span>= ", #{ occupation.city }" if occupation.city?
     %span= ", #{ occupation.state }" if occupation.state?
   .time
-    #{ occupation.start_date.strftime('%B %Y') } -
-    - if occupation.end_date?
-      = occupation.end_date.strftime('%B %Y')
-    - else
-      Present
+    = occupation_time(occupation)
   .description
     - if occupation.details.any?
       %ul
