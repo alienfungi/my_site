@@ -1,22 +1,20 @@
 class ResumeController < ApplicationController
-  before_action :set_certifications
-  before_action :set_educations
-  before_action :set_occupations
+  before_action :set_resume
 
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = ResumePdf.new(@resume, view_context)
+        filename = "#{ @resume.filename }.pdf"
+        send_data pdf.render, filename: filename, type: 'application/pdf'
+      end
+    end
   end
 
   private
 
-  def set_certifications
-    @certifications = Certification.by_date
-  end
-
-  def set_educations
-    @educations = Education.by_date
-  end
-
-  def set_occupations
-    @occupations = Occupation.by_date
+  def set_resume
+    @resume = Resume.new
   end
 end

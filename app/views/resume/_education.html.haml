@@ -1,20 +1,7 @@
 .entry
   .heading
-    = education.school + (',' if education.city || education.state?)
-    - if education.city?
-      = education.city + (',' if education.state)
-    - if education.state?
-      = education.state
+    = education_heading(education)
   .time
-    #{ education.start_date.strftime('%B %Y') } -
-    - if education.end_date?
-      #{ education.end_date.strftime('%B %Y') }
-    - else
-      Present
+    = education_time(education)
   .description
-    - if education.degree?
-      = education.degree
-      - if education.field_of_study?
-        in #{ education.field_of_study }
-    - elsif education.field_of_study?
-      Field of study: #{ education.field_of_study }
+    = education_description(education)

@@ -4,10 +4,11 @@
 #resume
   %section#education
     %h2 Education
-    = render partial: 'education', collection: @educations
+    = render partial: 'education', collection: @resume.educations
   %section#certifications
     %h2 Certifications
-    = render partial: 'certification', collection: @certifications
+    = render partial: 'certification', collection: @resume.certifications
   %section#experience
     %h2 Employment Experience
-    = render partial: 'occupation', collection: @occupations
+    = render partial: 'occupation', collection: @resume.occupations
+  = link_to 'Generate PDF', resume_path(format: :pdf)
