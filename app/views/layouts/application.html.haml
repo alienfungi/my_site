@@ -26,7 +26,7 @@
         .wrap
           %ul
             - nav_links.each do |text, path|
-              %li>= link_to text, path, class: (current_page?(path) ? 'selected' : '')
+              %li>= link_to text, path, class: nav_class(path, request.path)
             %li
               = link_to raw('&#9776;'), 'javascript:void(0)', id: 'sandwhich'
     %main

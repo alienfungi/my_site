@@ -38,4 +38,12 @@ module ApplicationHelper
       'Blog' => posts_path
     }
   end
+
+  def nav_class(link, path)
+    if (link == '/' && path == link) || (link != '/' && path.match(/\A#{ link }/i))
+      'selected'
+    else
+      ''
+    end
+  end
 end

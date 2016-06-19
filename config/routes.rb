@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'logout' => 'sessions#destroy'
   resources :posts, param: :slug, path: 'blog', only: [:index, :show]
   resources :projects, only: [:index, :show]
-  resources :tags, param: :slug, path: 'skills', only: [:index, :show]
+  resources :tags, param: :slug, path: 'experience', only: [:index, :show]
 
   scope :browser do
     get '/ie8' => 'browser_exception#ie8'
