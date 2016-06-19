@@ -3,13 +3,15 @@ html {
   color: $font-color;
   font-family: 'UbuntuMono';
   font-weight: normal;
-}
-html, body {
   margin: 0;
+  min-height: 100%;
   padding: 0;
+  position: relative;
 }
 body {
   font-size: 1em;
+  margin: 0 0 $footer-height 0;
+  padding: 0;
 }
 h1, h2, h3, h4, h5, p, ul, ol {
   margin: 0;
@@ -23,6 +25,7 @@ li {
 }
 h1 {
   font-size: 2em;
+  margin: 20px 0;
 }
 h2 {
   font-size: 1.5em;
@@ -73,8 +76,13 @@ main {
   padding: $layout-padding;
 }
 footer {
-  border-top: $layout-border;
-  padding: $layout-padding;
+  bottom: 0;
+  box-sizing: border-box;
+  height: $footer-height;
+  left: 0;
+  padding-top: 50px;
+  position: absolute;
+  width: 100%;
 }
 input {
   color: black;
@@ -96,6 +104,7 @@ a {
     border: 2px solid;
     border-radius: 5px;
     color: $unvisited;
+    display: inline-block;
     font-weight: bold;
     padding: 10px;
     text-decoration: none;
@@ -113,6 +122,12 @@ a {
       }
     }
   }
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
 }
 
 /*
@@ -150,6 +165,9 @@ a {
 }
 
 @media screen and (max-width: $size-medium) {
+  h1 {
+    margin: 0;
+  }
   header {
     border-bottom: 1px solid;
     padding-bottom: 10px;
@@ -171,21 +189,28 @@ a {
         }
       }
     }
-  }
-  header.responsive nav {
-    ul {
-      position: relative;
+    &.responsive nav {
+      ul {
+        position: relative;
+      }
+      li {
+        &:not(:last-child) {
+          display: inline;
+          float: none;
+        }
+        &:last-child {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+      }
     }
-    li {
-      &:not(:last-child) {
-        display: inline;
-        float: none;
-      }
-      &:last-child {
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
+  }
+  footer {
+    padding-top: 30px;
+    .left, .right {
+      float: none;
+      padding-bottom: 20px;
     }
   }
   .no-mobile {

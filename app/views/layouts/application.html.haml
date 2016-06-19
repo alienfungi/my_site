@@ -32,3 +32,12 @@
     %main
       .wrap
         = yield
+    %footer
+      .wrap
+        .right
+          = link_to 'LinkedIn', 'https://www.linkedin.com/in/zanewoodfin', target: '_blank'
+          = link_to 'GitHub', 'https://github.com/alienfungi', target: '_blank'
+          = link_to 'Facebook', 'https://www.facebook.com/zane.woodfin', target: '_blank'
+          = link_to 'Twitter', 'https://twitter.com/alienfungi', target: '_blank'
+        .left
+          &copy; #{ Date.today.year } ZaneCo, an almost imagined non-entity

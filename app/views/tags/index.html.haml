@@ -14,7 +14,7 @@
       - @tags.each do |tag|
         %tr
           %td= link_to tag.name, tag_path(tag.slug)
-          %td.no-mobile= graceful_none tag.occupations_count
-          %td.no-mobile= graceful_none tag.projects_count
-          %td.no-mobile= graceful_none tag.educations_count
-          %td.no-mobile= graceful_none tag.certifications_count
+          %td.no-mobile{ title: 'Jobs' }= graceful_none tag.occupations_count
+          %td.no-mobile{ title: 'Projects' }= graceful_none tag.projects_count
+          %td.no-mobile{ title: 'Schools' }= graceful_none tag.educations_count
+          %td.no-mobile{ title: 'Certifications' }= graceful_none tag.certifications_count
