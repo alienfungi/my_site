@@ -51,4 +51,12 @@ module ResumeHelper
   def occupation_time(occupation)
     date_range(occupation.start_date, occupation.end_date)
   end
+
+  def project_description(project)
+    project.description
+  end
+
+  def project_heading(project)
+    project.name
+  end
 end
