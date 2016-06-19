@@ -1,17 +1,17 @@
 - content_for :title do
-  = @tag.name
+  #{ @tag.name } Experience
 
-#tag
+#resume
   - if @tag.certifications.any?
     %h2 Certifications
-    %ul= render @tag.certifications
+    = render collection: @tag.certifications, partial: 'resume/certification'
   - if @tag.educations.any?
     %h2 Education
-    %ul= render @tag.educations
+    = render collection: @tag.educations, partial: 'resume/education'
   - if @tag.occupations.any?
     %h2 Occupations
-    %ul= render @tag.occupations
+    = render collection: @tag.occupations, partial: 'resume/occupation'
   - if @tag.projects.any?
     %h2 Projects
-    %ul= render @tag.projects
+    = render collection: @tag.projects, partial: 'resume/project'
   %p= link_to 'Back', tags_path

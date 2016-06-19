@@ -11,7 +11,7 @@
 
 class Certification < ActiveRecord::Base
   has_many :taggings, as: :taggable
-  has_many :tags, through: :taggings
+  has_many :tags, through: :taggings, dependent: :destroy
 
   validates_presence_of :date_acquired, :name, :organization
 

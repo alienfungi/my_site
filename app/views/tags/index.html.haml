@@ -1,6 +1,20 @@
 - content_for :title do
-  Skills
+  Experience
 
-- @tags.each_with_index do |tag, index|
-  = succeed(index < @tags.length - 1 ? ',' : '') do
-    = link_to tag.name, tag_path(tag.slug)
+#tags
+  %table
+    %thead.no-mobile
+      %tr
+        %th Name
+        %th Jobs
+        %th Projects
+        %th Schools
+        %th Certifications
+    %tbody
+      - @tags.each do |tag|
+        %tr
+          %td= link_to tag.name, tag_path(tag.slug)
+          %td.no-mobile= graceful_none tag.occupations_count
+          %td.no-mobile= graceful_none tag.projects_count
+          %td.no-mobile= graceful_none tag.educations_count
+          %td.no-mobile= graceful_none tag.certifications_count

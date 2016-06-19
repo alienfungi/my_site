@@ -1,0 +1,23 @@
+#tags {
+  table {
+    width: 100%;
+  }
+
+  tbody tr:hover {
+    background-color: $table-hover-color;
+  }
+
+  th, td {
+    min-width: 100px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  th {
+    border-bottom: 1px solid;
+  }
+
+  tr td:first-child {
+    text-align: left;
+  }
+}

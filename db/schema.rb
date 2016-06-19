@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160409041555) do
+ActiveRecord::Schema.define(version: 20160619025453) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "certifications", force: true do |t|
     t.date   "date_acquired", null: false
@@ -87,10 +88,11 @@ ActiveRecord::Schema.define(version: 20160409041555) do
   end
 
   create_table "tags", force: true do |t|
-    t.string   "name",       null: false
+    t.string   "name",                    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "slug",       null: false
+    t.string   "slug",                    null: false
+    t.hstore   "metadata",   default: {}, null: false
   end
 
   create_table "users", force: true do |t|
