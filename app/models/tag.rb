@@ -11,6 +11,8 @@
 #
 
 class Tag < ActiveRecord::Base
+  require 'uri'
+
   has_many :taggings, dependent: :destroy
   has_many :certifications, through: :taggings, source: :taggable, source_type: 'Certification'
   has_many :educations, through: :taggings, source: :taggable, source_type: 'Education'
@@ -24,16 +26,32 @@ class Tag < ActiveRecord::Base
 
   validates_presence_of :name
   validates_uniqueness_of :name, case_sensitive: false
+  validate :slug_is_url_safe
 
   before_validation :set_slug
   before_save :update_metadata
 
   scope :alphabetical, ->{ order('lower(name)') }
 
-  private
+  def self.regenerate_slugs
+    find_each do |tag|
+      tag.set_slug
+      tag.save if tag.slug_changed?
+    end
+  end
 
   def set_slug
-    self.slug = self.name.gsub(/\s+/, '_')
+    self.slug = self.name.downcase.gsub(/\s+/, '-')
+  end
+
+  private
+
+  def slug_is_url_safe
+    begin
+      URI.parse(slug)
+    rescue URI::InvalidURIError
+      errors.add(:name, 'contains invalid characters')
+    end
   end
 
   def tag_types
