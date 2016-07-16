@@ -11,8 +11,21 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
-# Ignore all logfiles and tempfiles.
+# logs and temporary files.
 /log/*.log
 /tmp
 
+# shared files
+/shared/log/*
+/shared/sockets/*
+/shared/pids/*
+
+# environment variables
 .env
+.rbenv-vars
+
+# gems
+/vendor/bundle/*
+
+# compiled assets
+/public/assets/*

@@ -73,6 +73,8 @@ GEM
     factory_girl_rails (4.5.0)
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
+    foreman (0.82.0)
+      thor (~> 0.19.1)
     forgery (0.6.0)
     haml (4.0.5)
       tilt
@@ -218,6 +220,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   diffy
   factory_girl_rails (~> 4.0)
+  foreman
   forgery (= 0.6.0)
   haml-rails
   jbuilder (~> 2.0)
