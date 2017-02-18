@@ -35,7 +35,7 @@ module ApplicationHelper
       'Resume' => resume_path,
       'Projects' => projects_path,
       'Experience' => tags_path,
-      'Blog' => posts_path
+      'Thoughts' => posts_path
     }
   end
 

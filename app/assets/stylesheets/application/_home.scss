@@ -1,0 +1,21 @@
+#packman_wrap {
+  border: 1px solid;
+  display: inline-block;
+  margin-top: 40px;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+  .header {
+    padding-bottom: 10px;
+    h2 {
+      display: inline;
+    }
+  }
+}
+#packman {
+  color: $visited;
+  height: 660px;
+  max-width: 100%;
+  text-align: left;
+  width: 570px;
+}
