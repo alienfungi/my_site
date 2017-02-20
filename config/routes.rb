@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   mount Mercury::Engine => '/'
   put 'mercury_update' => 'my_mercury#update'
   root 'static_pages#home'
+  get 'packman' => 'static_pages#packman'
   get 'resume' => 'resume#show', as: 'resume'
   get 'login'  => 'sessions#new'
   post 'login'  => 'sessions#create'
