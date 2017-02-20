@@ -16,15 +16,17 @@ module Admin
     end
 
     def destroy_button(object, html_options = {})
+      classes = "btn btn-danger#{ ' disabled' unless can?(:destroy, object) }"
       html_options.merge!({
-        method: :delete, class: 'btn btn-danger', name: 'Destroy', title: 'Destroy',
+        method: :delete, class: classes, name: 'Destroy', title: 'Destroy',
         data: { confirm: "Are you sure you want to destroy this #{ object.class.name }" }
       })
       link_to([:admin, object], html_options) { glyphicon_tag 'remove' }
     end
 
     def edit_button(object, html_options = {})
-      html_options.merge!({ class: 'btn btn-primary', name: 'Edit', title: 'Edit' })
+      classes = "btn btn-primary#{ ' disabled' unless can?(:edit, object) }"
+      html_options.merge!({ class: classes, name: 'Edit', title: 'Edit' })
       link_to([:edit, :admin, object], html_options) { glyphicon_tag 'edit' }
     end
 
@@ -34,7 +36,8 @@ module Admin
     end
 
     def history_button(object, html_options = {})
-      html_options.merge!({ class: 'btn btn-warning', name: 'History', title: 'History' })
+      classes = "btn btn-warning#{ ' disabled' unless can?(:edit, object) }"
+      html_options.merge!({ class: classes, name: 'History', title: 'History' })
       link_to(admin_versions_path(object.class.name, object.id), html_options) do
         glyphicon_tag 'time'
       end
@@ -55,7 +58,8 @@ module Admin
     end
 
     def show_button(object, html_options = {})
-      html_options.merge!({ class: 'btn btn-info', name: 'Show', title: 'Show' })
+      classes = "btn btn-info#{ ' disabled' unless can?(:show, object) }"
+      html_options.merge!({ class: classes, name: 'Show', title: 'Show' })
       link_to([:admin, object], html_options) { glyphicon_tag 'eye-open' }
     end
   end

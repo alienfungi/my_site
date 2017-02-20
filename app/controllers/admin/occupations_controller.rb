@@ -2,6 +2,7 @@ class Admin::OccupationsController < Admin::ApplicationController
   before_action :set_occupation, only: [:destroy, :edit, :show, :update]
   before_action :set_occupations, only: [:index]
   before_action :set_tags, only: [:edit, :new]
+  authorize_resource
 
   def create
     @occupation = Occupation.new(occupation_params)

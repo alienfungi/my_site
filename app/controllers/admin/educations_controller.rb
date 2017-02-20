@@ -2,6 +2,7 @@ class Admin::EducationsController < Admin::ApplicationController
   before_action :set_education, only: [:destroy, :edit, :show, :update]
   before_action :set_educations, only: [:index]
   before_action :set_tags, only: [:edit, :new]
+  authorize_resource
 
   def create
     @education = Education.new(education_params)

@@ -1,6 +1,7 @@
 class Admin::TagsController < Admin::ApplicationController
   before_action :set_tag, only: [:destroy, :edit, :show, :update]
   before_action :set_tags, only: [:index]
+  authorize_resource
 
   def create
     @tag = Tag.new(tag_params)

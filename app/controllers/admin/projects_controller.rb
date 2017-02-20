@@ -2,6 +2,7 @@ class Admin::ProjectsController < Admin::ApplicationController
   before_action :set_project, only: [:destroy, :edit, :show, :update]
   before_action :set_projects, only: [:index]
   before_action :set_tags, only: [:edit, :new]
+  authorize_resource
 
   def create
     @project = Project.new(project_params)

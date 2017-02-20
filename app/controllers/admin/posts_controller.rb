@@ -1,6 +1,7 @@
 class Admin::PostsController < Admin::ApplicationController
   before_action :set_post, only: [:destroy, :edit, :show, :update]
   before_action :set_posts, only: [:index]
+  authorize_resource
 
   def create
     @post = Post.new(post_params)

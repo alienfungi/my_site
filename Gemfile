@@ -36,6 +36,8 @@ gem 'simple_form'
 gem 'attribute_normalizer'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+# Moves authentication logic to one location
+gem 'cancan'
 # Makes browsers render all elements more consistently
 gem 'normalize-rails'
 # Record past states of models

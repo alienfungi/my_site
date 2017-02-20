@@ -2,6 +2,7 @@ class Admin::CertificationsController < Admin::ApplicationController
   before_action :set_certification, only: [:destroy, :edit, :show, :update]
   before_action :set_certifications, only: [:index]
   before_action :set_tags, only: [:edit, :new]
+  authorize_resource
 
   def create
     @certification = Certification.new(certification_params)

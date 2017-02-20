@@ -1,6 +1,7 @@
 class Admin::VersionsController < Admin::ApplicationController
   before_action :set_object
   before_action :set_version, except: [:index]
+  authorize_resource
 
   def diff
   end

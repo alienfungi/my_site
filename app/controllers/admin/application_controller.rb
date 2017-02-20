@@ -4,7 +4,7 @@ class Admin::ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   layout 'admin/layouts/application'
 
-  before_action :check_authorization
+  #before_action :check_authorization
   before_action :set_view_path
   before_action :set_paper_trail_whodunnit
 
