@@ -1,2 +1,8 @@
 - content_for :title do
-  Home
+  Welcome,
+  - if logged_in?
+    administrator.
+  - else
+    guest. Enjoy your visit.
+    %br
+    %small All create, update, and destroy actions are disabled.

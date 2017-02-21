@@ -3,7 +3,6 @@
 = f.input :private
 = f.input :summary
 = f.input :body, input_html: { rows: 20 }
-= f.submit 'Save', class: 'btn btn-primary'
-= link_to 'Cancel', admin_posts_path, class: 'btn btn-default'
+= render 'layouts/form_actions', f: f
 :javascript
   $('#post_body').markdown();

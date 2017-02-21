@@ -5,8 +5,13 @@ class Ability
     if user
       can :manage, :all
     else
-      can :new, [Certification, Education, Occupation, Post, Project, Tag]
-      can :read, [Certification, Education, Occupation, Post, Project, Tag]
+      can :read, :home
+      can [:new, :read], Certification
+      can [:new, :read], Education
+      can [:new, :read], Occupation
+      can [:new, :read], Post, private: false
+      can [:new, :read], Project
+      can [:new, :read], Tag
     end
   end
 end

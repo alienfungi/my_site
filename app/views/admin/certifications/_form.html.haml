@@ -5,5 +5,4 @@
 - if @tags.any?
   = f.association :tags, as: :check_boxes, checked: f.object.tag_ids,
     collection: @tags.map { |t| [t.name, t.id] }
-= f.submit 'Save', class: 'btn btn-primary'
-= link_to 'Cancel', admin_certifications_path, class: 'btn btn-default'
+= render 'layouts/form_actions', f: f

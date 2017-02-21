@@ -1,5 +1,5 @@
 class Admin::StaticPagesController < Admin::ApplicationController
-  authorize_resource
   def home
+    authorize! :read, :home
   end
 end

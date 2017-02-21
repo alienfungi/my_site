@@ -4,15 +4,14 @@ class Admin::ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   layout 'admin/layouts/application'
 
-  #before_action :check_authorization
   before_action :set_view_path
   before_action :set_paper_trail_whodunnit
 
-  private
-
-  def check_authorization
-    not_found unless logged_in?
+  rescue_from CanCan::AccessDenied do |exception|
+    not_found
   end
+
+  private
 
   def not_found
     raise ActionController::RoutingError.new('Not Found')

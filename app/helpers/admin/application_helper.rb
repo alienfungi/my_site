@@ -1,5 +1,7 @@
 module Admin
   module ApplicationHelper
+    include SessionsHelper
+
     def bootstrap_class_for(flash_type)
       case flash_type
       when 'success'
@@ -13,6 +15,10 @@ module Admin
       else
         flash_type
       end
+    end
+
+    def censor(text)
+      text.sub /\A(..).*\z/, "\\1..."
     end
 
     def destroy_button(object, html_options = {})

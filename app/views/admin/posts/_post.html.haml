@@ -1,4 +1,7 @@
 %tr
-  %td= post.title
-  %td= post.slug
+  %td
+    - if post.private
+      %span.glyphicon.glyphicon-lock{ title: 'private' }
+  %td= can?(:read, post) ? post.title : censor(post.title)
+  %td= can?(:read, post) ? post.slug : censor(post.slug)
   %td.right= render 'layouts/actions', object: post, include_show: true

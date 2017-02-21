@@ -1,0 +1,2 @@
+= f.submit 'Save', class: "btn btn-primary#{ ' disabled' unless can?(:manage, f.object) }"
+= link_to 'Cancel', [:admin, f.object.class], class: 'btn btn-default'

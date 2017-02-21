@@ -5,6 +5,7 @@
       Admin
       = "| #{ yield :title }" if content_for? :title
     %meta{ name: 'viewport', content: 'width=device-width', :'initial-scale' => '1.0' }
+    %meta{ name: 'robots', content: 'noindex, nofollow' }
     = stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'admin', 'data-turbolinks-track' => true
     = favicon_link_tag 'admin_favicon.ico'
@@ -30,7 +31,7 @@
             = nav_link_to('Projects')
             = nav_link_to('Tags')
           %ul.nav.navbar-nav.navbar-right
-            %li= link_to 'Log out', logout_path
+            %li= link_to (logged_in? ? 'Log out' : 'Leave'), logout_path
     .container
       - if content_for? :title
         %h1= yield :title
