@@ -10,7 +10,9 @@
     - if logged_in?
       :javascript
         function onMercuryReady() { Mercury.saveUrl = '/mercury_update'; }
+    = render 'layouts/google_tag_manager'
   %body
+    = render 'layouts/google_tag_manager_noscript'
     %header
       .wrap
         - if logged_in?

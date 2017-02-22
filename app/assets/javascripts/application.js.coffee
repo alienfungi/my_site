@@ -12,6 +12,7 @@
 #
 #= require jquery
 #= require turbolinks
+#= require google_tag_manager
 #= require_tree ./application/.
 
 $(document).on 'ready page:load', ->
