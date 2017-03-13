@@ -3,6 +3,5 @@
 = f.input :date_acquired
 = f.input :score
 - if @tags.any?
-  = f.association :tags, as: :check_boxes, checked: f.object.tag_ids,
-    collection: @tags.map { |t| [t.name, t.id] }
+  = f.association :tags, collection: @tags, input_html: { multiple: true }
 = render 'layouts/form_actions', f: f

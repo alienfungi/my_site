@@ -14,5 +14,11 @@
 #= require jquery_ujs
 #= require bootstrap-sprockets
 #= require bootstrap-markdown-bundle
+#= require select2
 #= require turbolinks
 #= require_tree ./admin/.
+
+$(document).on 'ready page:load', ->
+  $('select').select2
+    theme: 'bootstrap'
+    width: ''

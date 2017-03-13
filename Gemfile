@@ -19,6 +19,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 # Needed for Bootstrap
 gem 'bootstrap-sass', '~> 3.3.4'
+# Improved select boxes
+gem 'select2-rails'
 # Markdown
 gem 'rails-bootstrap-markdown'
 gem 'redcarpet', '~> 3.3.4'
