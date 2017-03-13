@@ -9,16 +9,12 @@ describe Admin::TagsController do
   end
 
   context 'guests' do
-    it 'cannot view tags' do
-      expect { get(:show, { id: id }) }.to raise_routing_error
+    it 'can view the tags index' do
+      expect { get :index }.not_to raise_error
     end
 
-    it 'cannot view the tags index' do
-      expect { get :index }.to raise_routing_error
-    end
-
-    it 'cannot begin to create tags' do
-      expect { get :new }.to raise_routing_error
+    it 'can begin to create tags' do
+      expect { get :new }.not_to raise_error
     end
 
     it 'cannot create tags' do

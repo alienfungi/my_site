@@ -8,14 +8,15 @@ describe 'user logs out' do
   before(:each) do
     log_in_as(user, { password: 'password' })
     visit admin_root_path
-    click_link 'Log out'
+    click_link 'Logout'
   end
 
   it 'redirects to the homepage' do
     expect(current_path).to eq(root_path)
   end
 
-  it 'no longer allows me to visit logged in only paths' do
-    expect { visit admin_root_path }.to raise_error(ActionController::RoutingError)
+  it 'no longer treats me like an admin' do
+    visit admin_root_path
+    expect(page).to have_content('Welcome, guest.')
   end
 end

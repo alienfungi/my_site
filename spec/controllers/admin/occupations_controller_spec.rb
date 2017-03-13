@@ -9,16 +9,12 @@ describe Admin::OccupationsController do
   end
 
   context 'guests' do
-    it 'cannot view occupations' do
-      expect { get(:show, { id: id }) }.to raise_routing_error
+    it 'can view the occupations index' do
+      expect { get :index }.not_to raise_error
     end
 
-    it 'cannot view the occupations index' do
-      expect { get :index }.to raise_routing_error
-    end
-
-    it 'cannot begin to create occupations' do
-      expect { get :new }.to raise_routing_error
+    it 'can begin to create occupations' do
+      expect { get :new }.not_to raise_error
     end
 
     it 'cannot create occupations' do

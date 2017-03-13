@@ -6,8 +6,8 @@ describe Admin::StaticPagesController do
   end
 
   context 'guests' do
-    it 'cannot visit home' do
-      expect { get :home }.to raise_routing_error
+    it 'can visit home' do
+      expect { get :home }.not_to raise_error
     end
   end
 end

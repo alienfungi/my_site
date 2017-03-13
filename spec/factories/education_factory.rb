@@ -22,7 +22,9 @@ FactoryGirl.define do
     field_of_study { Forgery('name').job_title }
     degree { Forgery('name').job_title }
     start_date { Forgery('date').date }
-    end_date { |o| o.start_date + (1 + rand(777)).days }
+    end_date do |object|
+      object.start_date + (1 + rand(777)).days if object.start_date
+    end
 
     factory :current_education do
       end_date nil

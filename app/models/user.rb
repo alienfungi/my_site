@@ -13,7 +13,9 @@
 class User < ActiveRecord::Base
   attr_accessor :remember_token
 
-  normalize_attribute(:email, with: :strip) { |value| value.downcase }
+  normalize_attribute(:email, with: :strip) do |value|
+    value.downcase if value
+  end
 
   has_secure_password
 

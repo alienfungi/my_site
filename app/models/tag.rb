@@ -41,7 +41,7 @@ class Tag < ActiveRecord::Base
   end
 
   def set_slug
-    self.slug = self.name.downcase.gsub(/\s+/, '-')
+    self.slug = name.downcase.gsub(/\s+/, '-') if name
   end
 
   private

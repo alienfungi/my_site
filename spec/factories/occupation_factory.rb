@@ -25,7 +25,9 @@ FactoryGirl.define do
     city { Forgery('address').city }
     state { Forgery('address').state }
     start_date { Forgery('date').date }
-    end_date { |o| o.start_date + (1 + rand(777)).days }
+    end_date do |object|
+      object.start_date + (1 + rand(777)).days if object.start_date
+    end
     details do
       (3 + rand(6)).times.map do
         Forgery('lorem_ipsum').sentence

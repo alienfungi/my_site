@@ -18,12 +18,12 @@ Rails.application.routes.draw do
 
   scope :admin, module: :admin, as: 'admin' do
     get '/' => 'static_pages#home', as: 'root'
-    resources :certifications
-    resources :posts
-    resources :educations
-    resources :occupations
-    resources :projects
-    resources :tags
+    resources :certifications, except: :show
+    resources :posts, except: :show
+    resources :educations, except: :show
+    resources :occupations, except: :show
+    resources :projects, except: :show
+    resources :tags, except: :show
     get '/:object_type/:object_id/versions' => 'versions#index',
       as: 'versions'
     get '/:object_type/:object_id/version/:id/diff' => 'versions#diff',
