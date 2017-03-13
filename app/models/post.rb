@@ -12,7 +12,7 @@
 #  updated_at :datetime
 #
 
-class Post < ActiveRecord::Base
+class Post < ApplicationRecord
   has_paper_trail only: :body
 
   validates_presence_of :body, :slug, :summary, :title

@@ -6,7 +6,7 @@ gem 'foreman'
 # Web server
 gem 'puma'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.5'
+gem 'rails', '5.0.2'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Indentation-based html templating
@@ -16,7 +16,7 @@ gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails'
 # Needed for Bootstrap
 gem 'bootstrap-sass', '~> 3.3.4'
 # Improved select boxes
@@ -29,7 +29,7 @@ gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster.
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
+gem 'jbuilder'
 # Backend browser detection
 gem 'browser'
 # Form DSL
@@ -37,9 +37,9 @@ gem 'simple_form'
 # Normalize model attributes
 gem 'attribute_normalizer'
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt'
 # Moves authentication logic to one location
-gem 'cancan'
+gem 'cancancan'
 # Makes browsers render all elements more consistently
 gem 'normalize-rails'
 # Record past states of models
@@ -54,18 +54,18 @@ gem 'prawn-table'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', '~> 0.4.0',          group: :doc
+  gem 'sdoc', group: :doc
 end
 
 group :development, :test do
   # Fixtures replacement for generating data
-  gem 'factory_girl_rails', '~> 4.0'
+  gem 'factory_girl_rails'
   # Generate lorem ipsum
-  gem 'forgery', '0.6.0'
+  gem 'forgery'
   # Rails console replacement
   gem 'pry-rails'
-  gem 'rspec-rails', '~> 3.2'
-  gem 'capybara', '~> 2.4'
+  gem 'rspec-rails'
+  gem 'capybara'
 end
 
 group :development do
@@ -73,19 +73,11 @@ group :development do
   gem 'spring'
   # Adds schema info to models with annotate command
   gem 'annotate'
+  # Monitor source code for changes
+  gem 'listen'
 end
 
 group :production do
   # Needed for Heroku
   gem 'rails_12factor'
 end
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-

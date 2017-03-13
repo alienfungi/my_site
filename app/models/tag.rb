@@ -10,7 +10,7 @@
 #  metadata   :hstore           default({}), not null
 #
 
-class Tag < ActiveRecord::Base
+class Tag < ApplicationRecord
   require 'uri'
 
   has_many :taggings, dependent: :destroy

@@ -9,7 +9,7 @@
 #  score         :string(255)
 #
 
-class Certification < ActiveRecord::Base
+class Certification < ApplicationRecord
   has_many :taggings, as: :taggable
   has_many :tags, through: :taggings, dependent: :destroy
 
