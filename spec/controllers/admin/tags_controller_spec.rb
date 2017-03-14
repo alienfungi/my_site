@@ -22,15 +22,15 @@ describe Admin::TagsController do
     end
 
     it 'cannot edit tags' do
-      expect { get(:edit, { id: id }) }.to raise_routing_error
+      expect { get(:edit, params: { id: id }) }.to raise_routing_error
     end
 
     it 'cannot update tags' do
-      expect { get(:update, { id: id }) }.to raise_routing_error
+      expect { get(:update, params: { id: id }) }.to raise_routing_error
     end
 
     it 'cannot delete tags' do
-      expect { delete(:destroy, { id: id }) }.to raise_routing_error
+      expect { delete(:destroy, params: { id: id }) }.to raise_routing_error
     end
   end
 end

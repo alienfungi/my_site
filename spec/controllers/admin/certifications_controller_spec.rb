@@ -22,15 +22,15 @@ describe Admin::CertificationsController do
     end
 
     it 'cannot edit certifications' do
-      expect { get(:edit, { id: id }) }.to raise_routing_error
+      expect { get(:edit, params: { id: id }) }.to raise_routing_error
     end
 
     it 'cannot update certifications' do
-      expect { get(:update, { id: id }) }.to raise_routing_error
+      expect { get(:update, params: { id: id }) }.to raise_routing_error
     end
 
     it 'cannot delete certifications' do
-      expect { delete(:destroy, { id: id }) }.to raise_routing_error
+      expect { delete(:destroy, params: { id: id }) }.to raise_routing_error
     end
   end
 end

@@ -16,7 +16,7 @@
 #  state               :string(255)
 #
 
-class Occupation < ActiveRecord::Base
+class Occupation < ApplicationRecord
   has_many :taggings, as: :taggable
   has_many :tags, through: :taggings
 

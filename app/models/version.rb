@@ -11,4 +11,5 @@
 #  created_at :datetime
 #
 
-class Version < ActiveRecord::Base; end
+class Version < ApplicationRecord
+end

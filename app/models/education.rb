@@ -14,7 +14,7 @@
 #  updated_at     :datetime
 #
 
-class Education < ActiveRecord::Base
+class Education < ApplicationRecord
   has_many :taggings, as: :taggable
   has_many :tags, through: :taggings
 

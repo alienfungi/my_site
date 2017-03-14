@@ -10,7 +10,7 @@
 #  updated_at      :datetime
 #
 
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   attr_accessor :remember_token
 
   normalize_attribute(:email, with: :strip) do |value|

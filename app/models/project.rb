@@ -12,7 +12,7 @@
 #  updated_at  :datetime
 #
 
-class Project < ActiveRecord::Base
+class Project < ApplicationRecord
   has_many :taggings, as: :taggable
   has_many :tags, through: :taggings
 
