@@ -41,7 +41,7 @@ Rails.application.configure do
   config.assets.debug = true
 
   # Suppress logger output for asset requests
-  config.assets.quite = true
+  config.assets.quiet = true
   # Checks for improperly declared sprockets dependencies.
 
   # Raises error for missing translations
