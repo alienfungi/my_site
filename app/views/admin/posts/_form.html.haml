@@ -1,8 +1,8 @@
 = f.input :title
 = f.input :slug
 = f.input :private
-= f.input :summary
-= f.input :body, input_html: { rows: 20 }
+~ f.input :summary
+~ f.input :body, input_html: { rows: 20 }
 = render 'layouts/form_actions', f: f
 :javascript
   $('#post_body').markdown();
