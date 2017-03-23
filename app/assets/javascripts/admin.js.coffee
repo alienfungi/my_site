@@ -13,7 +13,9 @@
 #= require jquery
 #= require jquery_ujs
 #= require bootstrap-sprockets
-#= require bootstrap-markdown-bundle
+#= require bootstrap-markdown
+#= require markdown.js
+#= require to-markdown
 #= require select2
 #= require turbolinks
 #= require_tree ./admin/.

@@ -21,8 +21,7 @@ gem 'coffee-rails'
 gem 'bootstrap-sass', '~> 3.3.4'
 # Improved select boxes
 gem 'select2-rails'
-# Markdown
-gem 'rails-bootstrap-markdown'
+# Markdown parser
 gem 'redcarpet', '~> 3.3.4'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -51,6 +50,13 @@ gem 'mercury-rails', github: 'jejacks0n/mercury'
 # PDF Generation
 gem 'prawn'
 gem 'prawn-table'
+
+source 'https://rails-assets.org' do
+  # Markdown editor
+  gem 'rails-assets-bootstrap-markdown'
+  gem 'rails-assets-markdown'
+  gem 'rails-assets-to-markdown'
+end
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
