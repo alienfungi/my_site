@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   scope :admin, module: :admin, as: 'admin' do
     get '/' => 'static_pages#home', as: 'root'
     resources :certifications, except: :show
-    resources :posts, except: :show
+    resources :posts
     resources :educations, except: :show
     resources :occupations, except: :show
     resources :projects, except: :show
