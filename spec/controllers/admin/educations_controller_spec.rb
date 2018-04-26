@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Admin::EducationsController do
-  let(:education) { FactoryGirl.create(:education) }
+  let(:education) { FactoryBot.create(:education) }
   let(:id) { education.id }
 
   def raise_routing_error

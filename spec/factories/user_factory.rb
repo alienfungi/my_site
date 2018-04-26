@@ -10,7 +10,7 @@
 #  updated_at      :datetime
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :user do
     email 'email@example.com'
     password 'password'

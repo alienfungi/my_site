@@ -13,19 +13,19 @@ require 'rails_helper'
 
 RSpec.describe Certification do
   it 'is invalid without date_acquired' do
-    certification = FactoryGirl.build :certification, date_acquired: nil
+    certification = FactoryBot.build :certification, date_acquired: nil
     certification.valid?
     expect(certification.errors[:date_acquired]).to include("can't be blank")
   end
 
   it 'is invalid without name' do
-    certification = FactoryGirl.build :certification, name: nil
+    certification = FactoryBot.build :certification, name: nil
     certification.valid?
     expect(certification.errors[:name]).to include("can't be blank")
   end
 
   it 'is invalid without organization' do
-    certification = FactoryGirl.build :certification, organization: nil
+    certification = FactoryBot.build :certification, organization: nil
     certification.valid?
     expect(certification.errors[:organization]).to include("can't be blank")
   end

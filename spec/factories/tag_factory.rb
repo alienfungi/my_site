@@ -9,7 +9,7 @@
 #  slug       :string(255)      not null
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :tag do
     name { Forgery('basic').color }
   end

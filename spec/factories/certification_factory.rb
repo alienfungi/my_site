@@ -9,7 +9,7 @@
 #  score         :string(255)
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :certification do
     name { Forgery('name').job_title }
     organization { Forgery('name').company_name }

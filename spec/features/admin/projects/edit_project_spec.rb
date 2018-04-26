@@ -4,7 +4,7 @@ describe 'editing projects' do
   include AuthHelper
 
   let!(:user) { User.create(email: 'email@example.com', password: 'password') }
-  let!(:project) { FactoryGirl.create(:project, name: 'Test Project') }
+  let!(:project) { FactoryBot.create(:project, name: 'Test Project') }
 
   before(:each) do
     log_in_as(user, { password: 'password' })

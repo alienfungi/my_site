@@ -8,7 +8,7 @@ gem 'puma'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.0.2'
 # Use postgresql as the database for Active Record
-gem 'pg'
+gem 'pg', '< 1.0'
 # Indentation-based html templating
 gem 'haml-rails'
 # Use SCSS for stylesheets
@@ -59,7 +59,7 @@ end
 
 group :development, :test do
   # Fixtures replacement for generating data
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   # Generate lorem ipsum
   gem 'forgery'
   # Rails console replacement

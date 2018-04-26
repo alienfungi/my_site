@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'user logs in' do
-  let!(:user) { FactoryGirl.create(:user, email: 'email@example.com', password: 'password') }
+  let!(:user) { FactoryBot.create(:user, email: 'email@example.com', password: 'password') }
 
   before(:each) do
     visit login_path

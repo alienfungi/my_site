@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Admin::TagsController do
-  let(:tag) { FactoryGirl.create(:tag) }
+  let(:tag) { FactoryBot.create(:tag) }
   let(:id) { tag.id }
 
   def raise_routing_error
