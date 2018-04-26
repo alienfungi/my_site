@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Admin::ProjectsController do
-  let(:project) { FactoryGirl.create(:project) }
+  let(:project) { FactoryBot.create(:project) }
   let(:id) { project.id }
 
   def raise_routing_error

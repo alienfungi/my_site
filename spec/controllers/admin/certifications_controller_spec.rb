@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Admin::CertificationsController do
-  let(:certification) { FactoryGirl.create(:certification) }
+  let(:certification) { FactoryBot.create(:certification) }
   let(:id) { certification.id }
 
   def raise_routing_error

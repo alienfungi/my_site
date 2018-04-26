@@ -16,7 +16,7 @@
 #  state               :string(255)
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :occupation do
     company { Forgery('name').company_name }
     company_url { Forgery('internet').domain_name }

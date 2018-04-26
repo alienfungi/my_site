@@ -14,7 +14,7 @@
 #  updated_at     :datetime
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :education do
     school { Forgery('name').company_name }
     city { Forgery('address').city }

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Admin::OccupationsController do
-  let(:occupation) { FactoryGirl.create(:occupation) }
+  let(:occupation) { FactoryBot.create(:occupation) }
   let(:id) { occupation.id }
 
   def raise_routing_error
