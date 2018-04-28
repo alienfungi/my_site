@@ -2,14 +2,14 @@
 #
 # Table name: posts
 #
-#  id         :integer          not null, primary key
-#  title      :string           not null
-#  slug       :string           not null
-#  summary    :text             not null
-#  body       :text             not null
-#  private    :boolean          default(FALSE), not null
-#  created_at :datetime
-#  updated_at :datetime
+#  id           :integer          not null, primary key
+#  title        :string           not null
+#  slug         :string           not null
+#  summary      :text             not null
+#  body         :text             not null
+#  confidential :boolean          default(FALSE), not null
+#  created_at   :datetime
+#  updated_at   :datetime
 #
 
 class Post < ApplicationRecord
@@ -22,7 +22,7 @@ class Post < ApplicationRecord
   before_validation :set_summary
 
   scope :by_date, -> { order(created_at: :desc) }
-  scope :live, -> { where(private: false) }
+  scope :live, -> { where(confidential: false) }
 
   def self.markdown_options
     {
@@ -36,7 +36,7 @@ class Post < ApplicationRecord
   end
 
   def paper_trail_overrides
-    [:private, :slug, :summary, :title]
+    [:confidential, :slug, :summary, :title]
   end
 
   def paper_trail_tracked
