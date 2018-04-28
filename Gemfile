@@ -61,7 +61,7 @@ group :development, :test do
   # Fixtures replacement for generating data
   gem 'factory_bot_rails'
   # Generate lorem ipsum
-  gem 'forgery'
+  gem 'faker'
   # Rails console replacement
   gem 'pry-rails'
   gem 'rspec-rails'

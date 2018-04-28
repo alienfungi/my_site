@@ -18,19 +18,19 @@
 
 FactoryBot.define do
   factory :occupation do
-    company { Forgery('name').company_name }
-    company_url { Forgery('internet').domain_name }
-    company_description { Forgery('lorem_ipsum').paragraph }
-    title { Forgery('name').job_title }
-    city { Forgery('address').city }
-    state { Forgery('address').state }
-    start_date { Forgery('date').date }
+    company { Faker::Company.name }
+    company_url { Faker::Internet.url }
+    company_description { Faker::Lorem.paragraph }
+    title { Faker::Job.title }
+    city { Faker::Address.city}
+    state { Faker::Address.state }
+    start_date { Faker::Date.backward }
     end_date do |object|
       object.start_date + (1 + rand(777)).days if object.start_date
     end
     details do
       (3 + rand(6)).times.map do
-        Forgery('lorem_ipsum').sentence
+        Faker::Lorem.sentence
       end
     end
 

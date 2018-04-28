@@ -16,12 +16,12 @@
 
 FactoryBot.define do
   factory :education do
-    school { Forgery('name').company_name }
-    city { Forgery('address').city }
-    state { Forgery('address').state }
-    field_of_study { Forgery('name').job_title }
-    degree { Forgery('name').job_title }
-    start_date { Forgery('date').date }
+    school { Faker::Educator.university }
+    city { Faker::Address.city }
+    state { Faker::Address.state }
+    field_of_study { Faker::Job.field }
+    degree { Faker::Educator.course }
+    start_date { Faker::Date.backward }
     end_date do |object|
       object.start_date + (1 + rand(777)).days if object.start_date
     end

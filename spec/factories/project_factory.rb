@@ -14,10 +14,10 @@
 
 FactoryBot.define do
   factory :project do
-    name "MyString"
-    description "MyText"
-    image "MyString"
-    link "MyString"
-    source_link "MyString"
+    name { "#{Faker::Color.color_name} #{Faker::Science.element}".titleize }
+    description { Faker::Lorem.paragraph }
+    image { Faker::Company.logo }
+    link { Faker::Internet.url }
+    source_link { Faker::Internet.url }
   end
 end

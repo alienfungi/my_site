@@ -11,9 +11,9 @@
 
 FactoryBot.define do
   factory :certification do
-    name { Forgery('name').job_title }
-    organization { Forgery('name').company_name }
-    date_acquired { Forgery('date').date }
+    name { Faker::Job.key_skill }
+    organization { Faker::Company.name }
+    date_acquired { Faker::Date.backward }
     score { "#{ 61 + rand(40) }%" }
   end
 end

@@ -7,6 +7,7 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  slug       :string(255)      not null
+#  metadata   :hstore           not null
 #
 
 require 'rails_helper'
