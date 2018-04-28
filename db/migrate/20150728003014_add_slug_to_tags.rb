@@ -1,4 +1,4 @@
-class AddSlugToTags < ActiveRecord::Migration
+class AddSlugToTags < ActiveRecord::Migration[4.2]
   def up
     add_column :tags, :slug, :string
     Tag.find_each { |tag| tag.save }

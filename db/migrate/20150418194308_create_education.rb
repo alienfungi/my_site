@@ -1,4 +1,4 @@
-class CreateEducation < ActiveRecord::Migration
+class CreateEducation < ActiveRecord::Migration[4.2]
   def change
     create_table :educations do |t|
       t.string :school, null: false
