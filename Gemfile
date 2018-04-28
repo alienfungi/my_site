@@ -45,8 +45,6 @@ gem 'normalize-rails'
 gem 'paper_trail'
 # Diffing
 gem 'diffy'
-# Inline editor
-gem 'mercury-rails', github: 'jejacks0n/mercury'
 # PDF Generation
 gem 'prawn'
 gem 'prawn-table'
