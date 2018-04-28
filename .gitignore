@@ -27,5 +27,9 @@
 # gems
 /vendor/bundle/*
 
+# yarn files
+/node_modules/*
+/yarn-error.log
+
 # compiled assets
 /public/assets/*

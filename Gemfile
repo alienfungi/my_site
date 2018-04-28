@@ -22,7 +22,6 @@ gem 'bootstrap-sass', '~> 3.3.4'
 # Improved select boxes
 gem 'select2-rails'
 # Markdown
-gem 'rails-bootstrap-markdown'
 gem 'redcarpet', '~> 3.3.4'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
