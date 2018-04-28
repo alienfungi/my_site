@@ -1,4 +1,4 @@
-require File.expand_path('../boot', __FILE__)
+require_relative 'boot'
 
 require 'rails/all'
 
@@ -20,7 +20,6 @@ module MySite
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    config.assets.precompile += %w(admin.css admin.js mercury.js jquery-1.7.js)
 
     config.action_controller.include_all_helpers = false
   end
