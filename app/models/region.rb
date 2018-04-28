@@ -4,9 +4,9 @@
 #
 #  id         :integer          not null, primary key
 #  content    :text             not null
-#  controller :string(255)      not null
-#  action     :string(255)      not null
-#  name       :string(255)      not null
+#  controller :string           not null
+#  action     :string           not null
+#  name       :string           not null
 #  created_at :datetime
 #  updated_at :datetime
 #

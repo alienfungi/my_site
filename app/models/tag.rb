@@ -3,11 +3,11 @@
 # Table name: tags
 #
 #  id         :integer          not null, primary key
-#  name       :string(255)      not null
+#  name       :string           not null
 #  created_at :datetime
 #  updated_at :datetime
-#  slug       :string(255)      not null
-#  metadata   :hstore           default({}), not null
+#  slug       :string           not null
+#  metadata   :hstore           not null
 #
 
 class Tag < ApplicationRecord

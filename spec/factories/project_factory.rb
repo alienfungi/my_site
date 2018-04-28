@@ -3,11 +3,11 @@
 # Table name: projects
 #
 #  id          :integer          not null, primary key
-#  name        :string(255)
+#  name        :string
 #  description :text
-#  image       :string(255)
-#  link        :string(255)
-#  source_link :string(255)
+#  image       :string
+#  link        :string
+#  source_link :string
 #  created_at  :datetime
 #  updated_at  :datetime
 #

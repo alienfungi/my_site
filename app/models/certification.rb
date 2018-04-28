@@ -4,9 +4,9 @@
 #
 #  id            :integer          not null, primary key
 #  date_acquired :date             not null
-#  name          :string(255)      not null
-#  organization  :string(255)      not null
-#  score         :string(255)
+#  name          :string           not null
+#  organization  :string           not null
+#  score         :string
 #
 
 class Certification < ApplicationRecord

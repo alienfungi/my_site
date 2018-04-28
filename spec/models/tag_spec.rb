@@ -3,10 +3,10 @@
 # Table name: tags
 #
 #  id         :integer          not null, primary key
-#  name       :string(255)      not null
+#  name       :string           not null
 #  created_at :datetime
 #  updated_at :datetime
-#  slug       :string(255)      not null
+#  slug       :string           not null
 #  metadata   :hstore           not null
 #
 
